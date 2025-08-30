@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Serif_Gujarati } from "next/font/google";
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // to applay the font Noto Serif Gujarati to our application
 const notoSerifGujarati = Noto_Serif_Gujarati({
