@@ -18,7 +18,7 @@ export default function Slider() {
         pagination={{ clickable: true }}
       >
         <SwiperSlide>
-          <div className="relative h-[550px] w-full">
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
             <Image
               src="/images/mainsliderimg.png"
               alt="Slide 1"
@@ -30,7 +30,7 @@ export default function Slider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative h-[550px]  w-full">
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
             <Image
               src="/images/mainsliderimg.png"
               alt="Slide 2"
@@ -42,7 +42,7 @@ export default function Slider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="relative h-[550px]  w-full">
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
             <Image
               src="/images/mainsliderimg.png"
               alt="Slide 3"
