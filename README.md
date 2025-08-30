@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Amazon Clone – Training Project
 
-## Getting Started
+A responsive and modern **Amazon Clone** website built as part of the **Dev Wave training program**.  
+The project focuses on **clean UI, dynamic routing, and a seamless shopping experience**, using the latest technologies.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 **Tech Stack**
+- **Framework:** Next.js (with TypeScript)  
+- **Styling:** Tailwind CSS (customized color palette and fonts)  
+- **Version Control:** Git & GitHub  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 **Features**
+- 🛍️ **Home Page with product listings**  
+- 🔍 **Search functionality** for products  
+- 🖌️ **Custom color palette** inspired by Amazon  
+- 📱 **Fully responsive design** for all devices  
+- 🔄 **Dynamic routing** for pages like product details and checkout  
+- ⚡ **Optimized performance** using Next.js features  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 👨‍💻 **Team Roles (Group 4)**  
+This project was developed by **Group 4** during the training, with each member handling specific responsibilities:
 
-To learn more about Next.js, take a look at the following resources:
+- **Islam Shaaban Gomaa – Team Leader** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eslamshaban060/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/eslamshaban060) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:eslamshaban060@gmail.com)  
+  - Project setup and structure  
+  - Implemented full routing and custom theme  
+  - Integrated fonts and finalized optimizations  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Ahmed Reda Salama – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-reda-salama-962864292/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Ahmed-RS-22) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:ahmed.rs.1532@gmail.com)  
+  - Developed and styled the website footer  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Boula Ayman – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boula-ayman-3a86581b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Boula-Ayman) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:boulaaymanzaher@gmail.com)  
+  - 
+ 
+- **Keroles Ehab – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keroles-ehab-62b83a186/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/KerolesEhab97) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:kerolesehab85@gmail.com)  
+  - 
 
-## Deploy on Vercel
+- **Abdelrhman Beaih – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdelrhman-beaih) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Abdobeaih) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:abdobeaih43@gmail.com)  
+  -  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
