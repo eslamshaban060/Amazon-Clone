@@ -60,13 +60,13 @@ const Footer: React.FC = () => {
       {/* Back to top */}
       <a
         href="#"
-        className="w-full h-[60px] flex justify-center items-center bg-[#37475A] font-[500] text-lg leading-[100%]"
+        className="w-full h-[60px] flex justify-center items-center bg-[var(--gray-light)] font-[500] text-lg leading-[100%]"
       >
         Back to Top
       </a>
 
       {/* Mid section */}
-      <div className="mid w-full bg-[#232F3E]">
+      <div className="mid w-full bg-[var(--gray-dark)]">
         {/* Top links */}
         <div className="foot-services max-w-[1024px] mx-auto p-10">
           <div className="row flex flex-wrap justify-between gap-10">
@@ -227,7 +227,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* End section */}
-      <div className="end w-full bg-[#131A22] py-5 px-10">
+      <div className="end w-full bg-[var(--black)] py-5 px-10">
         <div className="foot-more max-w-[1024px] mx-auto mb-10">
           <div className="row flex flex-col items-start gap-5">
             <ul className="flex gap-10 w-full justify-between sm:flex-nowrap flex-wrap">
