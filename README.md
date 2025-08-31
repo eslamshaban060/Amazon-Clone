@@ -42,6 +42,7 @@ This project was developed by **Group 4** during the training, with each member 
 - **Abdelrhman Beaih – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdelrhman-beaih) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Abdobeaih) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:abdobeaih43@gmail.com)  
   -  
 
+- **Ali Khaled – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iamaly) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)]((https://github.com/iamali-stack)) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:icyalikhaled2013@gmail.com) 
 
 
 
