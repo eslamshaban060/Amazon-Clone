@@ -6,44 +6,48 @@ The project focuses on **clean UI, dynamic routing, and a seamless shopping expe
 ---
 
 ## 🚀 **Tech Stack**
-- **Framework:** Next.js (with TypeScript)  
-- **Styling:** Tailwind CSS (customized color palette and fonts)  
-- **Version Control:** Git & GitHub  
+
+- **Framework:** Next.js (with TypeScript)
+- **Styling:** Tailwind CSS (customized color palette and fonts)
+- **Version Control:** Git & GitHub
 
 ---
 
 ## 🎨 **Features**
-- 🛍️ **Home Page with product listings**  
-- 🔍 **Search functionality** for products  
-- 🖌️ **Custom color palette** inspired by Amazon  
-- 📱 **Fully responsive design** for all devices  
-- 🔄 **Dynamic routing** for pages like product details and checkout  
-- ⚡ **Optimized performance** using Next.js features  
+
+- 🛍️ **Home Page with product listings**
+- 🔍 **Search functionality** for products
+- 🖌️ **Custom color palette** inspired by Amazon
+- 📱 **Fully responsive design** for all devices
+- 🔄 **Dynamic routing** for pages like product details and checkout
+- ⚡ **Optimized performance** using Next.js features
 
 ---
 
-## 👨‍💻 **Team Roles (Group 4)**  
+## 👨‍💻 **Team Roles (Group 4)**
+
 This project was developed by **Group 4** during the training, with each member handling specific responsibilities:
 
-- **Islam Shaaban Gomaa – Team Leader** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eslamshaban060/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/eslamshaban060) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:eslamshaban060@gmail.com)  
-  - Project setup and structure  
-  - Implemented full routing and custom theme  
-  - Integrated fonts and finalized optimizations  
+- **Islam Shaaban Gomaa – Team Leader** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eslamshaban060/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/eslamshaban060) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:eslamshaban060@gmail.com)
 
-- **Ahmed Reda Salama – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-reda-salama-962864292/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Ahmed-RS-22) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:ahmed.rs.1532@gmail.com)  
-  - Developed and styled the website footer  
+  *Project setup and structure - Implemented full routing and custom theme - Integrated fonts and finalized optimizations
+  *Home Cards Section - Added 32 card images with imports - Created typed array of objects for cards data - Exported and structured assets for reuse
 
-- **Boula Ayman – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boula-ayman-3a86581b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Boula-Ayman) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:boulaaymanzaher@gmail.com)  
-  - 
- 
-- **Keroles Ehab – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keroles-ehab-62b83a186/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/KerolesEhab97) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:kerolesehab85@gmail.com)  
-  - 
+- **Ahmed Reda Salama – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-reda-salama-962864292/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Ahmed-RS-22) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:ahmed.rs.1532@gmail.com)
 
-- **Abdelrhman Beaih – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdelrhman-beaih) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Abdobeaih) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:abdobeaih43@gmail.com)  
-  -  
+  - Developed and styled the website footer
 
-- **Ali Khaled – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iamaly) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/iamali-stack) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:icyalikhaled2013@gmail.com)  
-  - 
+- **Boula Ayman – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boula-ayman-3a86581b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Boula-Ayman) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:boulaaymanzaher@gmail.com)
+
+  -
+
+- **Keroles Ehab – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keroles-ehab-62b83a186/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/KerolesEhab97) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:kerolesehab85@gmail.com)
+
+  -
+
+- **Abdelrhman Beaih – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdelrhman-beaih) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Abdobeaih) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:abdobeaih43@gmail.com)
+
+  -
+
+- ## **Ali Khaled – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iamaly) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/iamali-stack) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:icyalikhaled2013@gmail.com)
   - Developed and styled a responsive website header with navigation
-
-
