@@ -1,26 +1,74 @@
+"use client";
 import React from "react";
-import { FaSearch, FaMapMarkerAlt, FaShoppingCart, FaChevronDown } from "react-icons/fa";
+import { FaSearch, FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Mousewheel } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Header = () => {
+  const swiperSettings = {
+    modules: [Navigation, Mousewheel],
+    spaceBetween: 0,
+    slidesPerView: 'auto' as const,
+    freeMode: true,
+    mousewheel: {
+      forceToAxis: true,
+      sensitivity: 1,
+      releaseOnEdges: true,
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 'auto' as const,
+        spaceBetween: 0,
+      },
+      600: {
+        slidesPerView: 'auto' as const,
+        spaceBetween: 0,
+      },
+      1024: {
+        slidesPerView: 'auto' as const,
+        spaceBetween: 0,
+      },
+    },
+  };
+
+
   return (
-    <div className="w-full ">
+    <div className="w-full">
       {/* Main Header */}
       <div className="bg-[#131921] text-white px-2 sm:px-4 py-2 sm:py-3">
-        <div className="w-full max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-3 lg:space-y-0">
-          {/* Left Section - Logo and Location */}
-          <div className="flex items-center space-x-3 sm:space-x-6 w-full lg:w-auto justify-center lg:justify-start">
-            {/* Amazon Logo */}
-            <div className="flex-shrink-0">
-              <Image 
-                src="/Amazon-Logo-White-PNG-Image.png" 
-                alt="Amazon Logo" 
-                width={120} 
-                height={40}
-                className="h-8 sm:h-10"
-              />
-            </div>
+        <div className="w-full max-w-8xl mx-auto  flex flex-col lg:flex-row items-center justify-between space-y-3 lg:space-y-0">
+          {/* Left Section - Logo, Cart (mobile), and Location */}
+          <div className="flex items-center  space-x-3 sm:space-x-6 w-full lg:w-auto justify-between lg:justify-start">
+            <div className="flex items-center space-x-3">
+              {/* Amazon Logo */}
+              <div className="flex-shrink-0 pt-4 ps-4 ">
+                <Image 
+                  src="/Amazon-Logo-White-PNG-Image.png" 
+                  alt="Amazon Logo" 
+                  width={120} 
+                  height={40}
+                  className="w-full h-10 sm:h-10"
+                />
+              </div>
+              
+           
+            </div> 
+              {/* Cart - Show on mobile beside logo */}
+              <div className="lg:hidden flex  space-x-1 cursor-pointer hover:underline">
+                  <Image 
+                  src="/Vector.png" 
+                  alt="cart" 
+                  width={120} 
+                  height={40}
+                  className="w-full h-8 sm:h-10"
+                />  <span className="hidden  sm:text-sm font-semibold">Cart</span>
+              </div>
             
             {/* Location - Hidden on mobile */}
             <div className="hidden sm:flex items-center space-x-2 text-sm">
@@ -54,10 +102,10 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Section - User Actions */}
-          <div className="flex items-center space-x-3 sm:space-x-6 w-full lg:w-auto justify-center lg:justify-end">
-            {/* Language Selector - Hidden on mobile */}
-            <div className="hidden sm:flex items-center space-x-1 cursor-pointer hover:underline">
+          {/* Right Section - User Actions (Desktop only) */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {/* Language Selector */}
+            <div className="flex items-center space-x-1 cursor-pointer hover:underline">
               <div className="w-6 h-4 bg-gradient-to-r from-orange-500 via-white to-green-600 rounded-sm flex items-center justify-center relative">
                 {/* Indian Flag with Ashoka Chakra */}
                 <div className="w-full h-full flex flex-col">
@@ -72,21 +120,27 @@ const Header = () => {
               <FaChevronDown className="text-xs" />
             </div>
 
-            {/* Account - Hidden on mobile */}
-            <div className="hidden lg:block cursor-pointer hover:underline">
+            {/* Account */}
+            <div className="cursor-pointer hover:underline">
               <div className="text-xs">Hello, sign in</div>
               <div className="text-sm font-semibold">Account & Lists</div>
             </div>
 
-            {/* Returns & Orders - Hidden on mobile */}
-            <div className="hidden lg:block cursor-pointer hover:underline">
+            {/* Returns & Orders */}
+            <div className="cursor-pointer hover:underline">
               <div className="text-xs">Returns</div>
               <div className="text-sm font-semibold">& Orders</div>
             </div>
 
-            {/* Cart */}
+            {/* Cart - Desktop version */}
             <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-              <FaShoppingCart className="text-xl sm:text-2xl" />
+                <Image 
+                  src="/Vector.png" 
+                  alt="cart" 
+                  width={120} 
+                  height={40}
+                  className="w-full h-8 sm:h-8"
+                />
               <span className="text-sm font-semibold">Cart</span>
             </div>
           </div>
@@ -97,35 +151,62 @@ const Header = () => {
       <div className="bg-[#232f3e] text-white px-2 sm:px-4 py-2 shadow-md">
         <div className="w-full max-w-8xl mx-auto flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
           {/* Hamburger Menu */}
-          <div className="flex items-center space-x-2 cursor-pointer hover:bg-[#37475a] px-2 py-1 rounded">
+          <div className="hidden sm:flex items-center space-x-2 cursor-pointer hover:bg-[#37475a] px-2 py-1 rounded">
             <Menu className="text-white text-lg" />
             <span className="text-sm">All</span>
           </div>
 
-          {/* Navigation Links */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm">
-            <span className="cursor-pointer hover:underline">Amazon mini TV</span>
-            <span className="cursor-pointer hover:underline">Sell</span>
-            <span className="cursor-pointer hover:underline">Best Sellers</span>
-            <span className="cursor-pointer hover:underline">Today's Deals</span>
-            <span className="cursor-pointer hover:underline">Mobiles</span>
-            <span className="cursor-pointer hover:underline">Customer Service</span>
+          {/* Navigation Links Swiper */}
+          <div className="flex-1 w-full overflow-hidden relative">
+            <Swiper {...swiperSettings} className="w-full">
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Amazon mini TV</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Sell</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Best Sellers</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Today's Deals</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Mobiles</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Customer Service</span>
+              </SwiperSlide>
+              
+              {/* Prime with dropdown */}
+              <SwiperSlide className="!w-auto">
+                <div className="flex items-center space-x-1 cursor-pointer hover:underline px-3">
+                  <span className="text-sm whitespace-nowrap">Prime</span>
+                  <ChevronDown className="text-white text-xs" />
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Electronics</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Fashion</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">New Releases</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Home & Kitchen</span>
+              </SwiperSlide>
+              <SwiperSlide className="!w-auto">
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Amazon Pay</span>
+              </SwiperSlide>
+            </Swiper>
             
-            {/* Prime with dropdown */}
-            <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-              <span>Prime</span>
-              <ChevronDown className="text-white text-xs" />
-            </div>
-            
-            <span className="cursor-pointer hover:underline">Electronics</span>
-            <span className="cursor-pointer hover:underline">Fashion</span>
-            <span className="cursor-pointer hover:underline">New Releases</span>
-            <span className="cursor-pointer hover:underline">Home & Kitchen</span>
-            <span className="cursor-pointer hover:underline">Amazon Pay</span>
+
           </div>
         </div>
       </div>
-  
     </div>
   );
 };
