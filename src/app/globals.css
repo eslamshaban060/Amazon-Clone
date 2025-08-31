@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
 }
 
 * {
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ====== Custom Scroll Bar ====== */
@@ -37,10 +36,9 @@ html::-webkit-scrollbar-thumb {
   /* Accent Colors */
   --blue: #146eb4;
   --blue-dark: #232f3e;
-  --blue-link: #007185;
-
+  --blue-link: #1f8394;
   /* Background Colors */
-  --bg: #e3e6e6;
+  --bg: #575757;
   --bg-light: #f8f8f8;
 
   /* Alert Colors */
