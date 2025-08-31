@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSearch, FaMapMarkerAlt, FaGlobe, FaUser, FaShoppingCart, FaBars, FaChevronDown } from "react-icons/fa";
+import { FaSearch, FaMapMarkerAlt, FaShoppingCart, FaChevronDown } from "react-icons/fa";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
