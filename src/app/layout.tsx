@@ -4,11 +4,12 @@ import "./globals.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Header from "@/components/header/header";
 
 // to applay the font Noto Serif Gujarati to our application
 const notoSerifGujarati = Noto_Serif_Gujarati({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: "400",
 });
 
 // meta data of our project
@@ -41,8 +42,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
     <html lang="en" suppressHydrationWarning={true}>
       <body className={notoSerifGujarati.className}>{children}</body>
+=======
+    <html lang="en">
+      <body className={notoSerifGujarati.className}>
+        <Header />
+        {children}
+      </body>
+>>>>>>> aa17eade7c663ab8095a898d0b96d45bf2d21a38
     </html>
   );
 }
