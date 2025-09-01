@@ -3,6 +3,7 @@ import React from "react";
 import { FaSearch, FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel } from "swiper/modules";
 
@@ -173,7 +174,7 @@ const Header = () => {
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
                 <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
-                  Best Sellers
+                  <Link href="/store.tsx/product">Best Sellers</Link>{" "}
                 </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
