@@ -26,7 +26,7 @@ const ListItems: React.FC = () => {
       {filteredItems.map((item) => (
         <div
           key={item.id}
-          className="flex flex-col border rounded-xl overflow-hidden shadow-md bg-white hover:shadow-lg transition"
+          className="flex flex-col  rounded-xl overflow-hidden  bg-white hover:shadow-lg transition"
         >
           {/* Product Image */}
           <div className="h-44 bg-gray-50 flex items-center justify-center">
