@@ -43,10 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSerifGujarati.className}>
-        <Header />
-        {children}
-      </body>
+      <body className={notoSerifGujarati.className}>{children}</body>
     </html>
   );
 }
