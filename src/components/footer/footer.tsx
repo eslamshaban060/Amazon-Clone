@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { FaGlobe, FaChevronDown } from "react-icons/fa";
-import eg from "./assets/eg.png";
-import us from "./assets/united-states.png";
-import amazonLogo from "./assets/Amazon.png";
+// Image paths from public folder
+const eg = "/footer/eg.png";
+const us = "/footer/united-states.png";
+const amazonLogo = "/footer/Amazon.png";
 // -------------------
 // Types
 // -------------------
