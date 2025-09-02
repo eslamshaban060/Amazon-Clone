@@ -1,4 +1,4 @@
-"use client ";
+"use client";
 import { useEffect, useState } from "react";
 import { FaGlobe, FaChevronDown } from "react-icons/fa";
 import eg from "./assets/eg.png";

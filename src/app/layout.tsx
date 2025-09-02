@@ -42,16 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<<<<<<<<< Temporary merge branch 1
     <html lang="en" suppressHydrationWarning={true}>
       <body className={notoSerifGujarati.className}>{children}</body>
-=========
-    <html lang="en">
-      <body className={notoSerifGujarati.className}>
-        <Header />
-        {children}
-      </body>
->>>>>>>>> Temporary merge branch 2
     </html>
   );
 }
