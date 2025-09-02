@@ -6,7 +6,7 @@ import SecondtSlider from "../app/secondSlider/page";
 import CardsRow from "@/components/homeCards/row";
 const page = () => {
   return (
-    <div>
+    <div className=" bg-[var(--bg)]">
       {/* header  */}
       <div>
         <Header />
