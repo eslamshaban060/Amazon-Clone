@@ -1,8 +1,9 @@
+"use client ";
 import { useEffect, useState } from "react";
-import { FaGlobe, FaChevronDown } from "react-icons/fa";;
-import eg from "./assets/eg.png"
-import us from "./assets/united-states.png"
-import amazonLogo from "./assets/Amazon.png"
+import { FaGlobe, FaChevronDown } from "react-icons/fa";
+import eg from "./assets/eg.png";
+import us from "./assets/united-states.png";
+import amazonLogo from "./assets/Amazon.png";
 // -------------------
 // Types
 // -------------------
@@ -106,7 +107,9 @@ const Footer: React.FC = () => {
                 Make Money with Us
               </h3>
               <ul className="flex flex-col gap-0 text-[14px] font-[300]">
-                <li className="cursor-pointer hover:underline">Sell on Amazon</li>
+                <li className="cursor-pointer hover:underline">
+                  Sell on Amazon
+                </li>
                 <li className="cursor-pointer hover:underline">
                   Sell under Amazon Accelerator
                 </li>
@@ -138,7 +141,9 @@ const Footer: React.FC = () => {
               </h3>
               <ul className="flex flex-col gap-0 text-[14px] font-[300]">
                 <li className="cursor-pointer hover:underline">Your Account</li>
-                <li className="cursor-pointer hover:underline">Returns Centre</li>
+                <li className="cursor-pointer hover:underline">
+                  Returns Centre
+                </li>
                 <li className="cursor-pointer hover:underline">
                   Recalls and Products Safety Alerts
                 </li>
@@ -331,9 +336,7 @@ const Footer: React.FC = () => {
             <li>Privacy Notice</li>
             <li>Interest-Based Ads</li>
           </ul>
-          <span>
-            © 1996-2024, Amazon.com, Inc. or its affiliates
-          </span>
+          <span>© 1996-2024, Amazon.com, Inc. or its affiliates</span>
         </div>
       </div>
     </footer>
