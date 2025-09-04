@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Custom Scroll Bar ====== */
+html::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: var(--gray-light);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: 5rem;
+}
+
+/*  all color in figma file  */
+:root {
+  /* Primary Colors */
+  --yellow: #ff9900;
+  --yellow-light: #febd69;
+  --orange: #f08804;
+
+  /* Brand Colors */
+  --black: #131921;
+  --gray-dark: #232f3e;
+  --gray-light: #37475a;
+  --white: #ffffff;
+
+  /* Accent Colors */
+  --blue: #146eb4;
+  --blue-dark: #232f3e;
+  --blue-link: #1f8394;
+  /* Background Colors */
+  --bg: #575757;
+  --bg-light: #f8f8f8;
+
+  /* Alert Colors */
+  --green: #007600;
+  --red: #b12704;
+}
