@@ -8,7 +8,7 @@ interface Cardtype {
 }
 const Card: React.FC<Cardtype> = ({ card }) => {
   return (
-    <div className="w-[100%]  xl:p-3 h-auto flex flex-col gap-3 bg-[var(--white)] ">
+    <div className="w-[100%] p-2 xl:p-3 h-auto flex flex-col gap-3 bg-[var(--white)] ">
       <div>
         <h3 className=" text-[13px] sm:text-[19px] md:text-[14px] lg:text-[18px] xl:text-2xl font-bold ">
           {card.title}
