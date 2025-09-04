@@ -41,7 +41,12 @@ export default function page() {
             { src: "/slider2/3.png", alt: "slide 3" },
             { src: "/slider2/4.png", alt: "slide 4" },
             { src: "/slider2/5.png", alt: "slide 5" },
+            { src: "/slider2/7.png", alt: "slide 7" },
             { src: "/slider2/6.png", alt: "slide 6" },
+            { src: "/slider2/8.png", alt: "slide 8" },
+            { src: "/slider2/9.png", alt: "slide 9" },
+            { src: "/slider2/10.png", alt: "slide 10" },
+            { src: "/slider2/11.png", alt: "slide 11" },
           ].map((img, idx) => (
             <SwiperSlide key={idx}>
               <Image

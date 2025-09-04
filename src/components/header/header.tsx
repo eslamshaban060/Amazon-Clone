@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel } from "swiper/modules";
+import { BiCart } from "react-icons/bi";
 
 // Import Swiper styles
 import "swiper/css";
@@ -137,14 +138,20 @@ const Header = () => {
 
             {/* Cart - Desktop version */}
             <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-              <Image
+              {/* <Image
                 src="/Vector.png"
                 alt="cart"
                 width={120}
                 height={40}
                 className="w-full h-8 sm:h-8"
-              />
-              <span className="text-sm font-semibold">Cart</span>
+              /> */}
+              <div className="relative">
+                <BiCart className=" text-4xl cursor-pointer" />
+                <p className="w-[18px] md:w-[20px] h-[18px] md:h-[20px] text-[14px] md:text-[20px] text-center text-orange-500 rounded-md font-semibold absolute -top-1 start-2.5">
+                  1
+                </p>
+              </div>
+              <span className="text-sm font-bold">Cart</span>
             </div>
           </div>
         </div>
