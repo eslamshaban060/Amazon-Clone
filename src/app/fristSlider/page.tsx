@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function page() {
   return (
     <>
-      <div className=" w-full">
+      <div className=" container w-[100%] mx-auto py-4 px-4 md:px-6 lg:px-8 bg-white mb-0.5">
         <h2
           style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
           className="font-bold "
@@ -50,7 +50,7 @@ export default function page() {
                 alt={img.alt}
                 width={162}
                 height={225}
-                className="rounded-lg object-fill"
+                className="rounded-lg object-fill w-full h-[300px] px-1.5"
               />
             </SwiperSlide>
           ))}
