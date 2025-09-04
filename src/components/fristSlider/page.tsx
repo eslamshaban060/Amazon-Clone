@@ -1,11 +1,15 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import Image from "next/image";
 
-export default function page() {
+import React from "react";
+import ProductSlider from "./components/ProductSlider";
+import { useSliderProducts } from "./hooks/useSliderProducts";
+
+export default function FirstSliderPage() {
+  const { products, status, error } = useSliderProducts();
+
   return (
     <>
+<<<<<<< HEAD:src/components/fristSlider/page.tsx
       <div className=" container w-[100%] mx-auto py-4 px-4 md:px-6 lg:px-8 bg-white mb-0.5">
         <h2
           style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
@@ -70,6 +74,9 @@ export default function page() {
           ))}
         </Swiper>
       </div>
+=======
+      <ProductSlider products={products} status={status} error={error} />
+>>>>>>> origin/Dev.before-main:src/app/fristSlider/page.tsx
     </>
   );
 }
