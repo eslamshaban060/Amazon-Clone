@@ -32,7 +32,7 @@ export default function Slider() {
         <SwiperSlide>
           <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
             <Image
-              src="/images/mainsliderimg.png"
+              src="/images/ChatGPT Image Sep 4, 2025, 07_40_37 PM.png"
               alt="Slide 2"
               className="rounded-lg"
               layout="fill"
@@ -44,8 +44,44 @@ export default function Slider() {
         <SwiperSlide>
           <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
             <Image
-              src="/images/mainsliderimg.png"
+              src="/images/2.jpg"
               alt="Slide 3"
+              className="rounded-lg"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
+            <Image
+              src="/images/3.jpg"
+              alt="Slide 4"
+              className="rounded-lg"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
+            <Image
+              src="/images/4.jpg"
+              alt="Slide 5"
+              className="rounded-lg"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">
+            <Image
+              src="/images/5.jpg"
+              alt="Slide 6"
               className="rounded-lg"
               layout="fill"
               objectFit="cover"
