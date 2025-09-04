@@ -1,9 +1,10 @@
+"use client";
 // src/context/ListContext.tsx
 import { createContext, useContext, useState, ReactNode } from "react";
 import { mockLists } from "./data"; // Import initial mock data
 
 // Shape of a single product/item
-export interface ListItem {
+export default interface ListItem {
   id: number;
   title: string;
   price: number;
@@ -13,14 +14,14 @@ export interface ListItem {
 
 // Shape of everything the context provides
 interface ListContextType {
-  list: ListItem[];                        // Current list of items
-  searchQuery: string;                     // Search keyword
+  list: ListItem[]; // Current list of items
+  searchQuery: string; // Search keyword
   setSearchQuery: (query: string) => void; // Update search keyword
-  removeItem: (id: number) => void;        // Remove product by id
-  sortedBy: string;                        // Current sorting method
+  removeItem: (id: number) => void; // Remove product by id
+  sortedBy: string; // Current sorting method
   setSortedBy: (criteria: string) => void; // Change sorting method
-  sortItems: (criteria: string) => void;   // Sort list by criteria
-  addItem: (item: ListItem) => void;       // Add new item
+  sortItems: (criteria: string) => void; // Sort list by criteria
+  addItem: (item: ListItem) => void; // Add new item
 }
 
 // Create the context (initially undefined)

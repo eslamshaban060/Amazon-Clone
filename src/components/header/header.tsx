@@ -3,18 +3,20 @@ import React from "react";
 import { FaSearch, FaMapMarkerAlt, FaChevronDown } from "react-icons/fa";
 import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Mousewheel } from 'swiper/modules';
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Mousewheel } from "swiper/modules";
+import { BiCart } from "react-icons/bi";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Header = () => {
   const swiperSettings = {
     modules: [Navigation, Mousewheel],
     spaceBetween: 0,
-    slidesPerView: 'auto' as const,
+    slidesPerView: "auto" as const,
     freeMode: true,
     mousewheel: {
       forceToAxis: true,
@@ -23,20 +25,19 @@ const Header = () => {
     },
     breakpoints: {
       480: {
-        slidesPerView: 'auto' as const,
+        slidesPerView: "auto" as const,
         spaceBetween: 0,
       },
       600: {
-        slidesPerView: 'auto' as const,
+        slidesPerView: "auto" as const,
         spaceBetween: 0,
       },
       1024: {
-        slidesPerView: 'auto' as const,
+        slidesPerView: "auto" as const,
         spaceBetween: 0,
       },
     },
   };
-
 
   return (
     <div className="w-full">
@@ -48,34 +49,37 @@ const Header = () => {
             <div className="flex items-center space-x-3">
               {/* Amazon Logo */}
               <div className="flex-shrink-0 pt-4 ps-4 ">
-                <Image 
-                  src="/Amazon-Logo-White-PNG-Image.png" 
-                  alt="Amazon Logo" 
-                  width={120} 
+                <Image
+                  src="/Amazon-Logo-White-PNG-Image.png"
+                  alt="Amazon Logo"
+                  width={120}
                   height={40}
                   className="w-full h-10 sm:h-10"
                 />
               </div>
-              
-           
-            </div> 
-              {/* Cart - Show on mobile beside logo */}
-              <div className="lg:hidden flex  space-x-1 cursor-pointer hover:underline">
-                  <Image 
-                  src="/Vector.png" 
-                  alt="cart" 
-                  width={120} 
-                  height={40}
-                  className="w-full h-8 sm:h-10"
-                />  <span className="hidden  sm:text-sm font-semibold">Cart</span>
-              </div>
-            
+            </div>
+            {/* Cart - Show on mobile beside logo */}
+            <div className="lg:hidden flex  space-x-1 cursor-pointer hover:underline">
+              <Image
+                src="/Vector.png"
+                alt="cart"
+                width={120}
+                height={40}
+                className="w-full h-8 sm:h-10"
+              />{" "}
+              <span className="hidden  sm:text-sm font-semibold">Cart</span>
+            </div>
+
             {/* Location - Hidden on mobile */}
             <div className="hidden sm:flex items-center space-x-2 text-sm">
               <FaMapMarkerAlt className="text-white text-lg" />
               <div>
-                <div className="text-xs font-lighter text-[#AAB5B6]">Delivering to Surat 394210</div>
-                <div className="text-white cursor-pointer hover:underline text-sm">Update location</div>
+                <div className="text-xs font-lighter text-[#AAB5B6]">
+                  Delivering to Surat 394210
+                </div>
+                <div className="text-white cursor-pointer hover:underline text-sm">
+                  Update location
+                </div>
               </div>
             </div>
           </div>
@@ -134,14 +138,20 @@ const Header = () => {
 
             {/* Cart - Desktop version */}
             <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-                <Image 
-                  src="/Vector.png" 
-                  alt="cart" 
-                  width={120} 
-                  height={40}
-                  className="w-full h-8 sm:h-8"
-                />
-              <span className="text-sm font-semibold">Cart</span>
+              {/* <Image
+                src="/Vector.png"
+                alt="cart"
+                width={120}
+                height={40}
+                className="w-full h-8 sm:h-8"
+              /> */}
+              <div className="relative">
+                <BiCart className=" text-4xl cursor-pointer" />
+                <p className="w-[18px] md:w-[20px] h-[18px] md:h-[20px] text-[14px] md:text-[20px] text-center text-orange-500 rounded-md font-semibold absolute -top-1 start-2.5">
+                  1
+                </p>
+              </div>
+              <span className="text-sm font-bold">Cart</span>
             </div>
           </div>
         </div>
@@ -160,24 +170,36 @@ const Header = () => {
           <div className="flex-1 w-full overflow-hidden relative">
             <Swiper {...swiperSettings} className="w-full">
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Amazon mini TV</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Amazon mini TV
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Sell</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Sell
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Best Sellers</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  <Link href="/store.tsx/product">Best Sellers</Link>{" "}
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Today's Deals</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Today&apos;s Deals
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Mobiles</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Mobiles
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Customer Service</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Customer Service
+                </span>
               </SwiperSlide>
-              
+
               {/* Prime with dropdown */}
               <SwiperSlide className="!w-auto">
                 <div className="flex items-center space-x-1 cursor-pointer hover:underline px-3">
@@ -185,25 +207,33 @@ const Header = () => {
                   <ChevronDown className="text-white text-xs" />
                 </div>
               </SwiperSlide>
-              
+
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Electronics</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Electronics
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Fashion</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Fashion
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">New Releases</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  New Releases
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Home & Kitchen</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Home & Kitchen
+                </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">Amazon Pay</span>
+                <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
+                  Amazon Pay
+                </span>
               </SwiperSlide>
             </Swiper>
-            
-
           </div>
         </div>
       </div>

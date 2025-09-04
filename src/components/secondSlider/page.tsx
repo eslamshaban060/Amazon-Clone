@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function page() {
   return (
     <>
-      <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8  ">
+      <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8 bg-white ">
         <h2
           style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
           className="font-bold "
@@ -41,7 +41,12 @@ export default function page() {
             { src: "/slider2/3.png", alt: "slide 3" },
             { src: "/slider2/4.png", alt: "slide 4" },
             { src: "/slider2/5.png", alt: "slide 5" },
+            { src: "/slider2/7.png", alt: "slide 7" },
             { src: "/slider2/6.png", alt: "slide 6" },
+            { src: "/slider2/8.png", alt: "slide 8" },
+            { src: "/slider2/9.png", alt: "slide 9" },
+            { src: "/slider2/10.png", alt: "slide 10" },
+            { src: "/slider2/11.png", alt: "slide 11" },
           ].map((img, idx) => (
             <SwiperSlide key={idx}>
               <Image
@@ -49,7 +54,7 @@ export default function page() {
                 alt={img.alt}
                 width={162}
                 height={225}
-                className="rounded-lg object-fill"
+                className="rounded-lg object-contain w-full h-[250px] px-1.5"
               />
             </SwiperSlide>
           ))}

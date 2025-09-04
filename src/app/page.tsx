@@ -1,37 +1,34 @@
+import React from "react";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import MainSlider from "../components/Caruosel/MainSlider";
-import FirstSlider from "../app/fristSlider/page";
-import SecondtSlider from "../app/secondSlider/page";
+import FirstSlider from "../components/fristSlider/page";
+import SecondtSlider from "../components/secondSlider/page";
 import CardsRow from "@/components/homeCards/row";
+
 const page = () => {
   return (
     <div className=" bg-[var(--bg)]">
-      {/* header  */}
-      <div>
+      <header>
         <Header />
-      </div>
+      </header>
 
-      {/* hero slider  */}
       <main>
         <MainSlider />
       </main>
-
-      {/* top cards  */}
+      {/* top  cards section  */}
       <section>
         <CardsRow />
       </section>
-      {/* first slider   */}
+
       <section>
         <FirstSlider />
       </section>
 
-      {/* secound section  */}
       <section>
         <SecondtSlider />
       </section>
 
-      {/* footer section  */}
       <footer>
         <Footer />
       </footer>

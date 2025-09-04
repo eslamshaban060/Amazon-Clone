@@ -1,15 +1,16 @@
 import { useList } from "./context/ListContext";
+import ListItem from "./context/ListContext";
 
 export default function SearchBar() {
-  const { searchQuery, setSearchQuery, sortedBy, sortItems } = useList();
+  // const { searchQuery, setSearchQuery, sortedBy, sortItems } = useList();
 
   return (
     <div className="mb-4 flex items-center sm:flex-row flex-col w-[90%] gap-2">
       <input
         type="text"
         placeholder="Search this list"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        // value={searchQuery}
+        // onChange={(e) => setSearchQuery(e.target.value)}
         className="flex-1 rounded border px-3 py-2"
       />
       <div className="actions flex gap-2 w-40">
@@ -17,8 +18,8 @@ export default function SearchBar() {
           name="sort"
           id="Sort"
           className="flex-1 rounded border px-3 py-2"
-          value={sortedBy}
-          onChange={(e) => sortItems(e.target.value)}
+          // value={sortedBy}
+          // onChange={(e) => sortItems(e.target.value)}
         >
           <option value="default">Default</option>
           <option value="name">Name</option>

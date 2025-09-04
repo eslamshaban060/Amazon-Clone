@@ -1,7 +1,7 @@
 // src/components/ListItems.tsx
 import React from "react";
 import { useList, ListItem } from "./context/ListContext"; // Import hook + type
-import { FaTrash, FaShoppingCart ,FaList } from "react-icons/fa";
+import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
 
 const ListItems: React.FC = () => {
   // Grab needed values from context
