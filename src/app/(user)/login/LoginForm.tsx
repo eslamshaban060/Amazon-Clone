@@ -1,5 +1,9 @@
+"use client"
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
+import Link from "next/link"; 
+import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { login,clearMessage } from "@/redux/slices/authSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
@@ -20,7 +24,7 @@ const LoginForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   // Navigation hook for programmatic routing
-  const navigate = useNavigate();
+  const router = useRouter(); // ✅ Next.js navigation
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     // Prevent default form submission behavior
@@ -49,7 +53,7 @@ const LoginForm: React.FC = () => {
       const timer = setTimeout(() => {
         // If login was successful, redirect to profile page
         if (isAuthenticated) {
-          navigate("/profile");
+          router.push("/profile"); 
         }
         // Clear the message
         dispatch(clearMessage());
@@ -57,13 +61,13 @@ const LoginForm: React.FC = () => {
       // Cleanup timer on component unmount or message change
       return () => clearTimeout(timer);
     }
-  }, [message, dispatch, isAuthenticated, navigate]);
+  }, [message, dispatch, isAuthenticated, router]);
 
   return (
     <div className="login mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
       {/* Amazon logo */}
       <div className="logo w-full">
-        <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+        <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
       </div>
       
       {/* Main login form container */}
@@ -134,7 +138,7 @@ const LoginForm: React.FC = () => {
         <div className="more border-t border-[var(--bg)]/60 py-2 flex flex-col gap-2">
           {/* Terms and conditions text */}
           <p className="w-full sm:text-[20px] text-sm font-[400]">
-            By creating an account or logging in, you agree to Amazon's
+            By creating an account or logging in, you agree to Amazon s
             <span className="text-[var(--blue-link)] hover:underline mx-2">
               Conditions of Use
             </span>
@@ -165,7 +169,7 @@ const LoginForm: React.FC = () => {
           </legend>
           {/* Link to registration page */}
           <Link
-            to="/register"
+            href="/register"
             className="px-2.5 py-2 border w-full rounded-2xl text-center font-[400] sm:text-[18px] text-sm hover:text-[var(--blue-link)]"
           >
             create your Amazon account

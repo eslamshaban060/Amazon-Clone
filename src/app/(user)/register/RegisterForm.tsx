@@ -1,5 +1,7 @@
+"use client"
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { FaCaretRight, FaEye } from "react-icons/fa";
 import { register } from "@/redux/slices/authSlice";
 import { validateForm } from "../../../utils/validation";
@@ -62,7 +64,7 @@ const RegisterForm: React.FC = () => {
     <div className="register mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
       {/* Amazon logo */}
       <div className="logo w-full">
-        <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+        <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
       </div>
       
       {/* Main registration form container */}
@@ -152,7 +154,7 @@ const RegisterForm: React.FC = () => {
           <p className="sm:text-[20px] text-[15px] font-[400] flex gap-1 sm:flex-row flex-col">
             <span>Already have an account?</span>
             <Link
-              to="/login"
+              href="/login"
               className="text-[var(--blue-link)] hover:underline flex items-center"
             >
               {/* Sign in link with arrow icon */}
@@ -162,7 +164,7 @@ const RegisterForm: React.FC = () => {
           
           {/* Terms and conditions text */}
           <p className="w-full sm:text-[20px] text-sm font-[400]">
-            By creating an account or logging in, you agree to Amazon's
+            By creating an account or logging in, you agree to Amazon&apos;s
             <span className="text-[var(--blue-link)] hover:underline mx-2">
               Conditions of Use
             </span>

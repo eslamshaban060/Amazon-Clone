@@ -1,13 +1,13 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { logout,updateProfile, clearMessage } from "@/redux/slices/authSlice";
 import { validateForm } from "@/utils/validation";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { User } from "../../../types/auth";
 import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
-
-
 const ProfilePage: React.FC = () => {
   // Get authentication state from Redux store
   const { user, isAuthenticated, message } = useAppSelector((state) => state.auth);
@@ -68,7 +68,7 @@ const ProfilePage: React.FC = () => {
       <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow space-y-4 text-center">
         {/* Amazon logo */}
         <div className="logo w-full">
-          <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+          <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
         </div>
         {/* Not logged in message */}
         <h2 className="text-xl font-bold">You are not logged in</h2>
@@ -78,13 +78,13 @@ const ProfilePage: React.FC = () => {
         {/* Login and Register buttons */}
         <div className="flex gap-4 justify-center mt-4">
           <Link
-            to="/login"
+            href="/login"
             className="bg-[var(--blue)] text-white px-4 py-2 rounded hover:bg-blue-600"
           >
             Login
           </Link>
           <Link
-            to="/register"
+            href="/register"
             className="bg-[var(--orange)] text-white px-4 py-2 rounded hover:bg-[var(--yellow)]"
           >
             Register
@@ -99,7 +99,7 @@ const ProfilePage: React.FC = () => {
     <div className="profile mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
       {/* Amazon logo */}
       <div className="logo w-full">
-        <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+        <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
       </div>
       
       {/* Profile card container */}
