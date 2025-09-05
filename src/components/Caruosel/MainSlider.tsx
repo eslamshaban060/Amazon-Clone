@@ -8,6 +8,7 @@ export default function Slider() {
   return (
     <div
       className="w-full "
+      suppressHydrationWarning
       style={{ "--swiper-navigation-color": "#131921" } as React.CSSProperties}
     >
       <Swiper
@@ -23,9 +24,9 @@ export default function Slider() {
               src="/images/mainsliderimg.png"
               alt="Slide 1"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>
@@ -35,9 +36,9 @@ export default function Slider() {
               src="/images/ChatGPT Image Sep 4, 2025, 07_40_37 PM.png"
               alt="Slide 2"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>
@@ -47,9 +48,9 @@ export default function Slider() {
               src="/images/2.jpg"
               alt="Slide 3"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>
@@ -59,9 +60,9 @@ export default function Slider() {
               src="/images/3.jpg"
               alt="Slide 4"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>
@@ -71,9 +72,9 @@ export default function Slider() {
               src="/images/4.jpg"
               alt="Slide 5"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>
@@ -83,9 +84,9 @@ export default function Slider() {
               src="/images/5.jpg"
               alt="Slide 6"
               className="rounded-lg"
-              layout="fill"
-              objectFit="cover"
+              fill
               priority
+              style={{ objectFit: "cover" }}
             />
           </div>
         </SwiperSlide>

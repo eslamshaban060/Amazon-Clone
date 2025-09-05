@@ -2,7 +2,7 @@ import { images } from "../Data/homeCardsImage";
 
 interface Item {
   name: string;
-  image: string;
+  image: string | { src: string; width?: number; height?: number }; // Allow both string URLs and imported images
 }
 
 export default interface Section {

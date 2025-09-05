@@ -176,12 +176,12 @@ const Footer: React.FC = () => {
           >
             <p className="flex items-center gap-2">
               <span className="w-5 flex justify-center items-center">
-                <FaGlobe className="w-full h-full" />
+                <FaGlobe className="w-full h-full" suppressHydrationWarning />
               </span>
               {lang}
             </p>
             <button>
-              <FaChevronDown />
+              <FaChevronDown suppressHydrationWarning />
             </button>
             <div
               className={`lang-dropdown p-5 w-[150%] bg-white text-black absolute top-[150%] rounded-xl left-[-20%] flex-col before:border-transparent before:border-b-white before:border-[16px] before:top-[-22%] before:left-[50%] before:z-30 z-30 before:absolute before:size-8 ${
@@ -210,7 +210,7 @@ const Footer: React.FC = () => {
               <span>{country.name}</span>
             </div>
             <button>
-              <FaChevronDown />
+              <FaChevronDown suppressHydrationWarning />
             </button>
             <div
               className={`country-dropdown p-5 w-[150%] bg-white text-black absolute top-[150%] rounded-xl left-[-20%] flex-col before:border-transparent before:border-b-white before:border-[16px] before:top-[-22%] before:left-[50%] before:z-20 before:absolute before:size-8 ${

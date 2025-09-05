@@ -40,9 +40,12 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" suppressHydrationWarning>
       {/* Main Header */}
-      <div className="bg-[#131921] text-white px-2 sm:px-4 py-2 sm:py-3">
+      <div
+        className="bg-[#131921] text-white px-2 sm:px-4 py-2 sm:py-3"
+        suppressHydrationWarning
+      >
         <div className="w-full max-w-8xl mx-auto  flex flex-col lg:flex-row items-center justify-between space-y-3 lg:space-y-0">
           {/* Left Section - Logo, Cart (mobile), and Location */}
           <div className="flex items-center  space-x-3 sm:space-x-6 w-full lg:w-auto justify-between lg:justify-start">
@@ -55,6 +58,7 @@ const Header = () => {
                   width={120}
                   height={40}
                   className="w-full h-10 sm:h-10"
+                  suppressHydrationWarning
                 />
               </Link>
             </div>
@@ -66,13 +70,17 @@ const Header = () => {
                 width={120}
                 height={40}
                 className="w-full h-8 sm:h-10"
+                suppressHydrationWarning
               />{" "}
               <span className="hidden  sm:text-sm font-semibold">Cart</span>
             </div>
 
             {/* Location - Hidden on mobile */}
             <div className="hidden sm:flex items-center space-x-2 text-sm">
-              <FaMapMarkerAlt className="text-white text-lg" />
+              <FaMapMarkerAlt
+                className="text-white text-lg"
+                suppressHydrationWarning
+              />
               <div>
                 <div className="text-xs font-lighter text-[#AAB5B6]">
                   Delivering to Surat 394210
@@ -101,7 +109,10 @@ const Header = () => {
                 className="flex-1 px-2 sm:px-4 bg-white py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#ff9900] focus:ring-opacity-50 text-sm"
               />
               <button className="bg-[#FBCC02] hover:bg-[#febd69] px-3 sm:px-6 py-2 rounded-r-md transition-colors duration-200">
-                <FaSearch className="text-gray-900 text-base sm:text-lg" />
+                <FaSearch
+                  className="text-gray-900 text-base sm:text-lg"
+                  suppressHydrationWarning
+                />
               </button>
             </div>
           </div>
@@ -121,7 +132,7 @@ const Header = () => {
                 </div>
               </div>
               <span className="text-sm">EN</span>
-              <FaChevronDown className="text-xs" />
+              <FaChevronDown className="text-xs" suppressHydrationWarning />
             </div>
 
             {/* Account */}
@@ -146,7 +157,10 @@ const Header = () => {
                 className="w-full h-8 sm:h-8"
               /> */}
               <div className="relative">
-                <BiCart className=" text-4xl cursor-pointer" />
+                <BiCart
+                  className=" text-4xl cursor-pointer"
+                  suppressHydrationWarning
+                />
                 <p className="w-[18px] md:w-[20px] h-[18px] md:h-[20px] text-[14px] md:text-[20px] text-center text-orange-500 rounded-md font-semibold absolute -top-1 start-2.5">
                   1
                 </p>
@@ -158,11 +172,14 @@ const Header = () => {
       </div>
 
       {/* Second Navbar */}
-      <div className="bg-[#232f3e] text-white px-2 sm:px-4 py-2 shadow-md">
+      <div
+        className="bg-[#232f3e] text-white px-2 sm:px-4 py-2 shadow-md"
+        suppressHydrationWarning
+      >
         <div className="w-full max-w-8xl mx-auto flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
           {/* Hamburger Menu */}
           <div className="hidden sm:flex items-center space-x-2 cursor-pointer hover:bg-[#37475a] px-2 py-1 rounded">
-            <Menu className="text-white text-lg" />
+            <Menu className="text-white text-lg" suppressHydrationWarning />
             <span className="text-sm">All</span>
           </div>
 
@@ -170,14 +187,14 @@ const Header = () => {
           <div className="flex-1 w-full overflow-hidden relative">
             <Swiper {...swiperSettings} className="w-full">
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Amazon mini TV
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Sell
                   </span>
@@ -185,25 +202,25 @@ const Header = () => {
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
                 <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
-                  <Link href="/store.tsx/product">Best Sellers</Link>{" "}
+                  <Link href="/store">Best Sellers</Link>{" "}
                 </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Today&apos;s Deals
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Mobiles
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Customer Service
                   </span>
@@ -212,44 +229,47 @@ const Header = () => {
 
               {/* Prime with dropdown */}
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <div className="flex items-center space-x-1 cursor-pointer hover:underline px-3">
                     <span className="text-sm whitespace-nowrap">Prime</span>
-                    <ChevronDown className="text-white text-xs" />
+                    <ChevronDown
+                      className="text-white text-xs"
+                      suppressHydrationWarning
+                    />
                   </div>
                 </Link>
               </SwiperSlide>
 
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Electronics
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Fashion
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     New Releases
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Home & Kitchen
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Amazon Pay
                   </span>

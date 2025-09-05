@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "@/redux/slices/productSlice";
@@ -9,9 +11,9 @@ export const useSliderProducts = () => {
     (state: RootState) => state.products
   );
 
-  // Dispatch fetchProducts if status is idle
+  // Dispatch fetchProducts if status is idle (only on client side)
   useEffect(() => {
-    if (status === "idle") {
+    if (typeof window !== "undefined" && status === "idle") {
       dispatch(fetchProducts());
     }
   }, [status, dispatch]);

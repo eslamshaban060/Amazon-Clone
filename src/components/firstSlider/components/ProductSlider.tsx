@@ -2,22 +2,28 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
-import { Product } from "../../store.tsx/product/types/product.types";
+import { Product } from "../../../app/store.tsx/product/types/product.types";
 
-interface SecondProductSliderProps {
+interface ProductSliderProps {
   products: Product[];
   status: string;
   error: string | null;
 }
 
-const SecondProductSlider: React.FC<SecondProductSliderProps> = ({
+const ProductSlider: React.FC<ProductSliderProps> = ({
   products,
   status,
   error,
 }) => {
-  if (status === "loading") {
+  if (status === "loading" || status === "idle") {
     return (
-      <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8">
+      <div className="w-full px-4 md:px-6 lg:px-8">
+        <h2
+          style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
+          className="font-bold"
+        >
+          Best Sellers in Clothing & Accessories
+        </h2>
         <div className="flex space-x-4">
           {[...Array(5)].map((_, idx) => (
             <div key={idx} className="animate-pulse">
@@ -31,7 +37,7 @@ const SecondProductSlider: React.FC<SecondProductSliderProps> = ({
 
   if (status === "failed" || error) {
     return (
-      <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8 text-center text-red-600">
+      <div className="w-full px-4 md:px-6 lg:px-8 text-center text-red-600">
         Error: {error || "Failed to load products"}
       </div>
     );
@@ -39,21 +45,22 @@ const SecondProductSlider: React.FC<SecondProductSliderProps> = ({
 
   if (!products || products.length === 0) {
     return (
-      <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8 text-center text-gray-600">
+      <div className="w-full px-4 md:px-6 lg:px-8 text-center text-gray-600">
         No products available
       </div>
     );
   }
 
   return (
-    <div className="container w-full mx-auto py-4 px-4 md:px-6 lg:px-8">
+    <div className="w-full">
       <h2
         style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
         className="font-bold"
       >
-        Min. 50% off | Unique kitchen finds | Amazon Brands & more
+        Best Sellers in Clothing & Accessories
       </h2>
       <Swiper
+        className="px-4 md:px-6 lg:px-8"
         modules={[Navigation, Pagination]}
         spaceBetween={0}
         slidesPerView={2}
@@ -98,4 +105,4 @@ const SecondProductSlider: React.FC<SecondProductSliderProps> = ({
   );
 };
 
-export default SecondProductSlider;
+export default ProductSlider;

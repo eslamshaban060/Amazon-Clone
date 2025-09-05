@@ -1,6 +1,7 @@
 // src/components/ListItems.tsx
 import React from "react";
-import { useList, ListItem } from "./context/ListContext"; // Import hook + type
+import { useList } from "./context/ListContext"; // Import hook
+import ListItem from "./context/ListContext"; // Import type
 import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
 
 const ListItems: React.FC = () => {
@@ -31,7 +32,7 @@ const ListItems: React.FC = () => {
           {/* Product Image */}
           <div className="h-44 bg-gray-50 flex items-center justify-center">
             <img
-              src={item.image}
+              src={typeof item.image === "string" ? item.image : item.image.src}
               alt={item.title}
               className="h-full w-full object-contain p-3"
             />

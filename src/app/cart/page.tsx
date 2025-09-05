@@ -97,9 +97,9 @@ const ShoppingCart = () => {
             <p>
               The price and availability of items at amazon.eg are subject to
               change. The Cart is a temporary place to store a list of your
-              items and reflects each item's most recent price.
-              <br /> Do you have a gift card or promotional code? We'll ask you
-              to enter your claim code when it's time to pay.
+              items and reflects each item&apos;s most recent price.
+              <br /> Do you have a gift card or promotional code? We&apos;ll ask
+              you to enter your claim code when it&apos;s time to pay.
             </p>
           </div>
         </div>
@@ -209,7 +209,7 @@ const ShoppingCart = () => {
 
               <div className="flex-1 min-w-0">
                 <h4 className="text-sm font-medium mb-1">
-                  Amazfit Pop 3S Smart Watch with 1.96"...
+                  Amazfit Pop 3S Smart Watch with 1.96&quot;...
                 </h4>
 
                 <div className="flex items-center gap-1 mb-1">

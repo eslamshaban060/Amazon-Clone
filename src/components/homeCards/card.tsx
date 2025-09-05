@@ -21,7 +21,15 @@ const Card: React.FC<Cardtype> = ({ card }) => {
         {card.items.map((item, id) => {
           return (
             <Link className=" flex flex-col gap-2" href="" key={id}>
-              <Image className="w-100" src={item.image} alt={item.name}></Image>
+              <Image
+                className="w-100"
+                src={
+                  typeof item.image === "string" ? item.image : item.image.src
+                }
+                alt={item.name}
+                width={100}
+                height={100}
+              />
               <p className="h-[30px] text-[9px] sm:text-[11px] xl:text-[12px]">
                 {item.name}
               </p>

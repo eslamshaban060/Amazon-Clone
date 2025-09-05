@@ -15,7 +15,7 @@ interface ProductID {
 }
 
 export const ApiData: React.FC<ProductID> = ({ id }) => {
-  const [productDetails, setproductDetails] = useState<Product>({});
+  const [productDetails, setproductDetails] = useState<Product | null>(null);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -27,11 +27,15 @@ export const ApiData: React.FC<ProductID> = ({ id }) => {
         }
       })
       .then((data: Product) => setproductDetails(data));
-  });
+  }, [id]);
 
   return (
     <div>
-      <ProducData productDetails={productDetails} />
+      {productDetails ? (
+        <ProducData productDetails={productDetails} />
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 };

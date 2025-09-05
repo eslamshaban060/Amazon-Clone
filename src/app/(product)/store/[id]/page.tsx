@@ -3,7 +3,13 @@ import { ApiData } from "@/Data/ApiData/productDetails";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
-const ProductDetails = (Props: any) => {
+interface ProductDetailsProps {
+  params: {
+    id: string;
+  };
+}
+
+const ProductDetails = (Props: ProductDetailsProps) => {
   console.log(Props.params.id);
   return (
     <div>
@@ -15,7 +21,7 @@ const ProductDetails = (Props: any) => {
       {/* top section  */}
       <section className=" p-5">
         <div>
-          <ApiData id={Props.params.id} />
+          <ApiData id={parseInt(Props.params.id)} />
         </div>
       </section>
 

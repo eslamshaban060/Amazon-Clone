@@ -8,7 +8,7 @@ import img4 from "../lists-images/card2 (7).png";
 import img5 from "../lists-images/card2 (4).png";
 
 // Import the ListItem type (for type safety";
-import { ListItem } from "./ListContext";
+import ListItem from "./ListContext";
 
 // Example single product
 export const all: ListItem[] = [

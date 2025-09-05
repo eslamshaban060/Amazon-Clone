@@ -1,5 +1,5 @@
-import { useList } from "./context/ListContext";
-import ListItem from "./context/ListContext";
+// import { useList } from "./context/ListContext";
+// import ListItem from "./context/ListContext";
 
 export default function SearchBar() {
   // const { searchQuery, setSearchQuery, sortedBy, sortItems } = useList();

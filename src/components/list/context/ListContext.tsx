@@ -9,7 +9,7 @@ export default interface ListItem {
   title: string;
   price: number;
   shipping: string;
-  image: string;
+  image: string | { src: string; width?: number; height?: number }; // Allow both string URLs and imported images
 }
 
 // Shape of everything the context provides
