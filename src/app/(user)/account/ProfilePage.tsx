@@ -1,48 +1,81 @@
-import { useDispatch, useSelector } from "react-redux";
-import { logout, updateProfile, clearMessage  } from "../../../redux/slices/authSlice";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { validateForm } from "../../../utils/validation";
 import { FaEye } from "react-icons/fa";
+import { logout,updateProfile, clearMessage } from "@/redux/slices/authSlice";
+import { validateForm } from "@/utils/validation";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { User } from "../../../types/auth";
 import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
-export default function ProfilePage() {
-  const { user, isAuthenticated, message } = useSelector((state) => state.auth);
-  const [edit, setEdit] = useState(user || {});
-  const [editMode, setEditMode] = useState(false);
-  const dispatch = useDispatch();
-  const [showPassword,setShowPassword]=useState(false)
-  // Handle profile update
-  const handleUpdate = () => {
-    const result = validateForm(edit, true, user); // true = profile update
+
+
+const ProfilePage: React.FC = () => {
+  // Get authentication state from Redux store
+  const { user, isAuthenticated, message } = useAppSelector((state) => state.auth);
+  
+  // Local state for editing form data (starts with current user data)
+  const [edit, setEdit] = useState<Partial<User>>(user || {});
+  
+  // Toggle between view and edit modes
+  const [editMode, setEditMode] = useState<boolean>(false);
+  
+  // Redux dispatch function for triggering actions
+  const dispatch = useAppDispatch();
+  
+  // Toggle password visibility in edit mode
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  /**
+   * Handle profile update submission
+   * Validates form data and dispatches update action if valid
+   */
+  const handleUpdate = (): void => {
+    // Validate the edited form data
+    // Pass true for isProfileUpdate and current user for context
+    const result = validateForm(edit as User, true, user);
+    
+    // If validation fails, show error message and return
     if (!result.valid) {
       dispatch({ type: "auth/setMessage", payload: result.message });
       return;
     }
 
+    // If validation passes, dispatch update action
     dispatch(updateProfile(edit));
+    
+    // Set success message
     dispatch({
       type: "auth/setMessage",
       payload: "Profile updated successfully ✅",
     });
+    
+    // Exit edit mode
     setEditMode(false);
   };
+
+  // Effect to auto-clear messages after 3 seconds
   useEffect(() => {
     if (message) {
+      // Set timer to clear message
       const timer = setTimeout(() => dispatch(clearMessage()), 3000);
+      // Cleanup timer on component unmount or message change
       return () => clearTimeout(timer);
     }
   }, [message, dispatch]);
-  // If not logged in
+
+  // If user is not authenticated, show login prompt
   if (!isAuthenticated) {
     return (
       <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow space-y-4 text-center">
-              <div className="logo w-full ">
-                <img src={amazonLogo} alt="" className="w-40 mx-auto" />
-              </div>
+        {/* Amazon logo */}
+        <div className="logo w-full">
+          <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+        </div>
+        {/* Not logged in message */}
         <h2 className="text-xl font-bold">You are not logged in</h2>
         <p className="text-gray-600">
           Please log in or create an account to access your profile.
         </p>
+        {/* Login and Register buttons */}
         <div className="flex gap-4 justify-center mt-4">
           <Link
             to="/login"
@@ -61,18 +94,23 @@ export default function ProfilePage() {
     );
   }
 
+  // Main profile page layout (when user is authenticated)
   return (
-    <div className="profile mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10" >
-              <div className="logo w-full ">
-                <img src={amazonLogo} alt="" className="w-40 mx-auto" />
-              </div>
+    <div className="profile mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
+      {/* Amazon logo */}
+      <div className="logo w-full">
+        <img src={amazonLogo} alt="" className="w-40 mx-auto" />
+      </div>
+      
+      {/* Profile card container */}
       <div className="max-w-xl w-full mx-auto bg-white p-6 rounded-lg shadow-lg border-[0.2px] border-[var(--bg)]/20 flex flex-col gap-6">
         <h2 className="text-2xl font-bold text-center">Profile</h2>
 
-        {/* Message Display */}
+        {/* Success/Error message display */}
         {message && (
           <p
             className={`text-center font-medium ${
+              // Green for success messages (with ✅), red for errors
               message.includes("✅") ? "text-[var(--green)]" : "text-[var(--red)]"
             }`}
           >
@@ -80,11 +118,12 @@ export default function ProfilePage() {
           </p>
         )}
 
-        {/* Name */}
+        {/* Name/Email field */}
         <div>
           <label className="block text-sm font-medium text-gray-600">
             Name
           </label>
+          {/* Show input in edit mode, display text in view mode */}
           {editMode ? (
             <input
               className="w-full border rounded p-2 mt-1"
@@ -96,11 +135,12 @@ export default function ProfilePage() {
           )}
         </div>
 
-        {/* Mobile */}
+        {/* Mobile number field */}
         <div>
           <label className="block text-sm font-medium text-gray-600">
             Mobile
           </label>
+          {/* Show input in edit mode, display text in view mode */}
           {editMode ? (
             <input
               className="w-full border rounded p-2 mt-1"
@@ -112,18 +152,22 @@ export default function ProfilePage() {
           )}
         </div>
 
-        {/* Password  */}
+        {/* Password field - only shown in edit mode */}
         {editMode && (
           <div className="relative">
             <label className="block text-sm font-medium text-gray-600">
               Password
             </label>
+            {/* Eye icon to toggle password visibility */}
             <FaEye
-            onClick={()=> setShowPassword(prev => !prev )}
-              className={`absolute right-2.5 top-[50%] transform-[translate(0%,0%)]  text-2xl ${showPassword? "text-[var(--blue)] ":"text-[var(--bg)]"} `}
-            ></FaEye>
+              onClick={() => setShowPassword(prev => !prev)}
+              className={`absolute right-2.5 top-[50%] transform-[translate(0%,0%)] text-2xl cursor-pointer ${
+                showPassword ? "text-[var(--blue)]" : "text-[var(--bg)]"
+              }`}
+            />
+            {/* Password input with toggle between text/password type */}
             <input
-              type={showPassword? "text" :"password"}
+              type={showPassword ? "text" : "password"}
               className="w-full border rounded p-2 mt-1"
               value={edit.password || ""}
               onChange={(e) => setEdit({ ...edit, password: e.target.value })}
@@ -131,9 +175,10 @@ export default function ProfilePage() {
           </div>
         )}
 
-        {/* Action Buttons */}
+        {/* Action buttons - different sets for edit/view modes */}
         <div className="flex gap-4">
           {editMode ? (
+            // Edit mode buttons: Save and Cancel
             <>
               <button
                 onClick={handleUpdate}
@@ -149,6 +194,7 @@ export default function ProfilePage() {
               </button>
             </>
           ) : (
+            // View mode buttons: Edit Profile and Logout
             <>
               <button
                 onClick={() => setEditMode(true)}
@@ -168,4 +214,6 @@ export default function ProfilePage() {
       </div>
     </div>
   );
-}
+};
+
+export default ProfilePage;
