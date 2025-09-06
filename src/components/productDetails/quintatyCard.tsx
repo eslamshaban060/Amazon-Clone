@@ -6,14 +6,14 @@ interface ProductType {
 }
 const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
   return (
-    <div className="border rounded-md p-4 w-[100%] xl:w-[90%] shadow-sm">
+    <div className="border-[0.9px] border-black rounded-md p-4 w-[100%] xl:w-[90%] ">
       <div className="text-2xl ">
         <span className="text-[33px] mt-1">
           <span className="pe-1">$</span>
           {productDetails.price}
         </span>
       </div>
-      <p className="text-[16px]  text-[var(--bg)] mt-1">
+      <p className="text-[16px] text-[var(--bg)] mt-1">
         $9.99 delivery 6-9 October.
       </p>
 
@@ -23,7 +23,7 @@ const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
       <p className="text-[var(--blue-link)] text-sm mt-2 cursor-pointer">
         Delivery to New York - Update Location
       </p>
-      <p className="text-red-600 text-sm mt-2">
+      <p className="text-[var(--red)] text-sm mt-2">
         Usually ships within 4 to 5 days
       </p>
 
@@ -33,30 +33,30 @@ const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
         <option>Quantity: 3</option>
       </select>
 
-      <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-medium py-2 rounded-md mt-3">
+      <button className="w-full bg-[var(--yellow)] hover:bg-[var(--yellow-light)] text-[var(--black)] font-medium py-2 rounded-md mt-3">
         Add to Cart
       </button>
-      <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 rounded-md mt-2">
+      <button className="w-full bg-[var(--orange)] hover:bg-[var(--yellow)] text-[var(--white)] font-medium py-2 rounded-md mt-2">
         Buy Now
       </button>
 
-      <div className="text-sm text-gray-600 mt-3">
+      <div className="text-sm text-[var(--gray-light)] mt-3">
         <p>
           Ships from <span className="font-medium">Monatik LLC</span>
         </p>
         <p>
           Sold by{" "}
-          <span className="text-blue-600 cursor-pointer">Monatik LLC</span>
+          <span className="text-[var(--blue)] cursor-pointer">Monatik LLC</span>
         </p>
         <p>
           Payment{" "}
-          <span className="text-blue-600 cursor-pointer">
+          <span className="text-[var(--blue)] cursor-pointer">
             Secure transaction
           </span>
         </p>
       </div>
 
-      <button className="w-full border rounded-md py-2 mt-3 text-sm hover:bg-gray-50">
+      <button className="w-full border rounded-md py-2 mt-3 text-sm hover:bg-[var(--bg-light)]">
         Add to List
       </button>
     </div>

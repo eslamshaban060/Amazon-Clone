@@ -170,14 +170,14 @@ const Header = () => {
           <div className="flex-1 w-full overflow-hidden relative">
             <Swiper {...swiperSettings} className="w-full">
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Amazon mini TV
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Sell
                   </span>
@@ -185,25 +185,25 @@ const Header = () => {
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
                 <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
-                  <Link href="/store.tsx/product">Best Sellers</Link>{" "}
+                  <Link href="/store">Best Sellers</Link>{" "}
                 </span>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Today&apos;s Deals
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Mobiles
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Customer Service
                   </span>
@@ -212,7 +212,7 @@ const Header = () => {
 
               {/* Prime with dropdown */}
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <div className="flex items-center space-x-1 cursor-pointer hover:underline px-3">
                     <span className="text-sm whitespace-nowrap">Prime</span>
                     <ChevronDown className="text-white text-xs" />
@@ -221,35 +221,35 @@ const Header = () => {
               </SwiperSlide>
 
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Electronics
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Fashion
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     New Releases
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Home & Kitchen
                   </span>
                 </Link>
               </SwiperSlide>
               <SwiperSlide className="!w-auto">
-                <Link href="/store.tsx/product">
+                <Link href="/store">
                   <span className="text-sm cursor-pointer hover:underline whitespace-nowrap px-3">
                     Amazon Pay
                   </span>

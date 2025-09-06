@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import MainSlider from "../components/Caruosel/MainSlider";
-import FirstSlider from "../components/fristSlider/page";
-import SecondtSlider from "../components/secondSlider/page";
+// import fristSlider
+// import SecondtSlider from "../components/secondSlider/page";
 import CardsRow from "@/components/homeCards/row";
 
 const page = () => {
@@ -21,13 +21,9 @@ const page = () => {
         <CardsRow />
       </section>
 
-      <section>
-        <FirstSlider />
-      </section>
+      <section>{/* <FirstSlider /> */}</section>
 
-      <section>
-        <SecondtSlider />
-      </section>
+      <section>{/* <SecondtSlider /> */}</section>
 
       <footer>
         <Footer />

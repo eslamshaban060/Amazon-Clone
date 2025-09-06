@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Product } from "../types/product.types";
+import Link from "next/link";
 
 interface ProductCardProps {
   product: Product;
@@ -9,7 +10,10 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105 min-h-[400px]">
+    <Link
+      href={`store/${product.id}`}
+      className="bg-white border border-gray-200 rounded-lg shadow-md p-4 flex flex-col justify-between transform transition-transform duration-200 hover:scale-105 min-h-[400px]"
+    >
       <div className="relative w-full h-48 mb-4">
         <Image
           src={product.image}
@@ -38,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           Rating: {product.rating.rate} ({product.rating.count})
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import ProductCard from "./components/ProductCard";
-import { useProducts } from "./hooks/useProducts";
+import ProductCard from "./product/components/ProductCard";
+import { useProducts } from "./product/hooks/useProducts";
 
 const ProductPage = () => {
   const { products, status, error, handleAddToCart } = useProducts();
