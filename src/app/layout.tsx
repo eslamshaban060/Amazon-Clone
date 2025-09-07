@@ -5,14 +5,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Header from "@/components/header/header";
+import { Providers } from "@/components/Providers"; // ✅ import wrapper
 
-// to applay the font Noto Serif Gujarati to our application
+// Apply the font Noto Serif Gujarati to our application
 const notoSerifGujarati = Noto_Serif_Gujarati({
   subsets: ["latin"],
   weight: "400",
 });
 
-// meta data of our project
+// Metadata of our project
 export const metadata: Metadata = {
   title: "Amazon Clone",
   description: "Amazon Clone project built during DevWave training by group4.",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Amazon Clone",
     images: [
       {
-        url: "/public/amazonCard.jpg",
+        url: "/amazonCard.jpg", // ✅ remove /public (Next serves public/ automatically)
         width: 600,
         height: 600,
       },
@@ -43,7 +44,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={notoSerifGujarati.className}>{children}</body>
+      <body className={notoSerifGujarati.className}>
+        <Providers>   {/* ✅ Redux store wrapper */}
+          <Header />  {/* keep header inside Redux too if it uses hooks */}
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
