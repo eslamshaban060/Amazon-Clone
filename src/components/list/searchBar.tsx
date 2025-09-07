@@ -1,3 +1,4 @@
+"use client";
 import { useAppDispatch,useAppSelector } from "@/redux/hooks";
 import { setSearchQuery,sortItems } from "@/redux/slices/listSlice";
 
