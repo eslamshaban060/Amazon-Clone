@@ -70,8 +70,8 @@ export const cardsData: Section[] = [
     link: "See more",
   },
   {
-    title: "Up to 60% off | Styles for",
-    title2: " women",
+    title: "Up to 60% off | Styles ",
+    title2: "for women",
     items: [
       { name: "Women's Clothing", image: images[20] },
       { name: "Footwear+Handbags", image: images[21] },

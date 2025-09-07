@@ -1,7 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 
 export default function Slider() {
@@ -12,11 +12,14 @@ export default function Slider() {
       style={{ "--swiper-navigation-color": "#131921" } as React.CSSProperties}
     >
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
         navigation
-        pagination={{ clickable: true }}
+        pagination={{ clickable: false }}
+        loop={true}
+        autoplay={{ delay: 3000 }}
+        className="producSlider"
       >
         <SwiperSlide>
           <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">

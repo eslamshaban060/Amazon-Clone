@@ -1,23 +1,25 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import Image from "next/image";
-import { Product } from "../../../app/store.tsx/product/types/product.types";
+import { Product } from "../../product/types/product.types";
+import Link from "next/link";
+import { Scrollbar } from "swiper/modules";
+import "swiper/css/scrollbar";
 
-interface ProductSliderProps {
+export default interface ProductSliderProps {
   products: Product[];
   status: string;
   error: string | null;
 }
 
-const ProductSlider: React.FC<ProductSliderProps> = ({
+export const ProductSlider: React.FC<ProductSliderProps> = ({
   products,
   status,
   error,
 }) => {
   if (status === "loading" || status === "idle") {
     return (
-      <div className="w-full px-4 md:px-6 lg:px-8">
+      <div className="w-full px-4 bg-white md:px-6 lg:px-8">
         <h2
           style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
           className="font-bold"
@@ -52,44 +54,47 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   }
 
   return (
-    <div className="w-full">
-      <h2
-        style={{ marginLeft: "25px", marginBottom: "20px", display: "block" }}
-        className="font-bold"
-      >
+    <div className="w-full p-5 h-[340px] sm:h-[300px] bg-white">
+      <h2 className="font-bold  text-[22px]  mb-[20px] block">
         Best Sellers in Clothing & Accessories
       </h2>
       <Swiper
-        className="px-4 md:px-6 lg:px-8"
-        modules={[Navigation, Pagination]}
+        className="px-4 h-[220px]   producSlider  bg-white w-[100%] md:px-6 lg:px-8"
+        modules={[Navigation, Pagination, Scrollbar]}
         spaceBetween={0}
+        navigation
         slidesPerView={2}
-        pagination={{ clickable: true }}
-        loop={true}
+        loop={false}
+        scrollbar={{ draggable: true }}
+        slidesPerGroup={2}
         breakpoints={{
           640: {
             slidesPerView: 3,
             spaceBetween: 10,
+            slidesPerGroup: 3,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 10,
+            slidesPerGroup: 3,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 8,
             spaceBetween: 15,
+            slidesPerGroup: 3,
           },
         }}
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <div className="relative group cursor-pointer">
-              <Image
+            <Link
+              href={`/store/${product.id}`}
+              className="relative h-[100%] group gap-5 flex justify-center items-center w-[90% ]cursor-pointer"
+            >
+              <img
                 src={product.image}
                 alt={product.title}
-                width={162}
-                height={225}
-                className="rounded-lg object-fill transition-transform duration-200 group-hover:scale-105"
+                className="rounded-lg h-[100%] w-[90%]   py-5 transition-transform duration-200 group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <p className="text-sm font-semibold truncate">
@@ -97,12 +102,10 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
                 </p>
                 <p className="text-xs">${product.price}</p>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
 };
-
-export default ProductSlider;

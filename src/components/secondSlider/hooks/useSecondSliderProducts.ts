@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "@/redux/slices/productSlice";
 import { RootState, AppDispatch } from "@/redux/store";
-import { Product } from "../../../app/store.tsx/product/types/product.types";
+import { Product } from "../../product/types/product.types";
 
 export const useSecondSliderProducts = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -23,7 +23,7 @@ export const useSecondSliderProducts = () => {
   // If we have more than 10 products, get 10-20, otherwise get all products
   let secondSliderProducts: Product[] = [];
   if (products.length > 10) {
-    secondSliderProducts = products.slice(10, Math.min(20, products.length));
+    secondSliderProducts = products.slice(5, Math.min(20, products.length));
   } else if (products.length > 0) {
     // If we have 10 or fewer products, just use all of them
     secondSliderProducts = products;

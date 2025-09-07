@@ -20,7 +20,7 @@ const Card: React.FC<Cardtype> = ({ card }) => {
       <div className=" grid  grid-cols-2 grid-rows-2 gap-1 sm:gap-3 md:gap-2 xl:gap-3 ">
         {card.items.map((item, id) => {
           return (
-            <Link className=" flex flex-col gap-2" href="" key={id}>
+            <Link className=" flex flex-col gap-2" href="/store" key={id}>
               <Image
                 className="w-100"
                 src={
@@ -39,7 +39,7 @@ const Card: React.FC<Cardtype> = ({ card }) => {
       </div>
       <div>
         <Link
-          href=""
+          href="/store"
           className=" text-[15px] py-4 pt-0 md:pt-2 font-medium  block text-[var(--blue-link)]"
         >
           {card.link}
