@@ -1,7 +1,9 @@
-import { useList } from "./context/ListContext";
+import { useAppDispatch,useAppSelector } from "@/redux/hooks";
+import { setSearchQuery,sortItems } from "@/redux/slices/listSlice";
 
 export default function SearchBar() {
-  const { searchQuery, setSearchQuery, sortedBy, sortItems } = useList();
+  const dispatch = useAppDispatch();
+  const { searchQuery, sortedBy } = useAppSelector((state) => state.list);
 
   return (
     <div className="mb-4 flex items-center sm:flex-row flex-col w-[90%] gap-2">
@@ -9,7 +11,7 @@ export default function SearchBar() {
         type="text"
         placeholder="Search this list"
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        onChange={(e) => dispatch(setSearchQuery(e.target.value))}
         className="flex-1 rounded border px-3 py-2"
       />
       <div className="actions flex gap-2 w-40">
@@ -18,7 +20,7 @@ export default function SearchBar() {
           id="Sort"
           className="flex-1 rounded border px-3 py-2"
           value={sortedBy}
-          onChange={(e) => sortItems(e.target.value)}
+          onChange={(e) => dispatch(sortItems(e.target.value))}
         >
           <option value="default">Default</option>
           <option value="name">Name</option>
