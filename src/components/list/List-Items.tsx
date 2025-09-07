@@ -3,7 +3,6 @@ import React from "react";
 import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
 import { useAppDispatch ,useAppSelector } from "@/redux/hooks";
 import { removeItem } from "@/redux/slices/listSlice";
-
 const ListItems: React.FC = () => {
   const dispatch = useAppDispatch();
   const { list, searchQuery } = useAppSelector((state) => state.list);

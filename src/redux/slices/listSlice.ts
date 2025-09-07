@@ -1,12 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { mockLists } from "@/components/list/data";
-
 // Shape of a single product/item
 export interface ListItem {
   id: number;
   title: string;
-  description:string;
+  description: string;
   price: number;
   shipping: string;
   image: string;
@@ -20,17 +18,22 @@ interface ListState {
 
 // ✅ Load from localStorage if exists
 const loadFromLocalStorage = (): ListItem[] => {
-  try {
-    const data = localStorage.getItem("items");
-    return data ? JSON.parse(data) : mockLists;
-  } catch {
-    return mockLists;
+  if (typeof window !== "undefined") {
+    try {
+      const data = localStorage.getItem("items");
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
   }
+  return [];
 };
 
 // ✅ Save to localStorage whenever list changes
 const saveToLocalStorage = (items: ListItem[]) => {
-  localStorage.setItem("items", JSON.stringify(items));
+  if (typeof window !== "undefined") {
+    localStorage.setItem("items", JSON.stringify(items));
+  }
 };
 
 const initialState: ListState = {
@@ -74,7 +77,7 @@ const listSlice = createSlice({
       } else if (action.payload === "price") {
         sortedItems.sort((a, b) => a.price - b.price);
       } else if (action.payload === "default") {
-        sortedItems = [...mockLists];
+        sortedItems = [...sortItems];
       }
 
       state.list = sortedItems;
@@ -83,7 +86,7 @@ const listSlice = createSlice({
     },
 
     // Reset to default mock list
-    resetItems: (state ,action:PayloadAction<ListItem[]>) => {
+    resetItems: (state, action: PayloadAction<ListItem[]>) => {
       state.list = action.payload;
       saveToLocalStorage(state.list);
     },
