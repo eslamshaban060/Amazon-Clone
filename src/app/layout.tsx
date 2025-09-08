@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Header from "@/components/header/header";
-import { Providers } from "@/components/Providers"; // ✅ import wrapper
+import { Providers } from "@/components/product/Providers"; // ✅ import wrapper
 
 // Apply the font Noto Serif Gujarati to our application
 const notoSerifGujarati = Noto_Serif_Gujarati({
@@ -45,8 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={notoSerifGujarati.className}>
-        <Providers>   {/* ✅ Redux store wrapper */}
-          <Header />  {/* keep header inside Redux too if it uses hooks */}
+        <Providers>
+          {" "}
+          {/* ✅ Redux store wrapper */}
+          <Header /> {/* keep header inside Redux too if it uses hooks */}
           {children}
         </Providers>
       </body>
