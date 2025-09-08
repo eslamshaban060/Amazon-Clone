@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { ShoppingCart, Trash2, Plus } from "lucide-react";
-
-import { FaList } from "react-icons/fa";
+import {FaList } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { removeItem } from "@/redux/slices/listSlice";
 import { addCartItem } from "@/redux/slices/cartSlice";
+import { ShoppingCart, Trash2 } from "lucide-react";
+
 import Link from "next/link";
 import Image from "next/image";
 const ListItems: React.FC = () => {
@@ -42,8 +42,8 @@ const ListItems: React.FC = () => {
             style={{ backgroundColor: "var(--bg-light)" }}
           >
             <Image
-            width="208"
-            height="208"
+              width="208"
+              height="208"
               src={item.image}
               alt={item.title}
               className="rounded-lg object-cover w-52 px-1.5"
@@ -63,19 +63,33 @@ const ListItems: React.FC = () => {
               {item.price} EGP
             </div>
             {/* Actions */}
-            <div className="flex gap-2 mt-4">
-              <button
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--yellow)] text-white hover:bg-[var(--orange)] transition flex-7"
-                onClick={() => alert(`${item.title} added to cart!`)}
-              >
-                <FaShoppingCart /> Add
-              </button>
-              <button
-                className="flex items-center gap-2 px-3 py-2 rounded-lg flex-2 bg-[var(--red)] text-white hover:bg-red-600 transition"
-                onClick={() => dispatch(removeItem(item.id))}
-              >
-                <FaTrash /> Delete
-              </button>
+            <div className="mt-8 pt-6 ">
+              <div className="flex gap-3 p-4 bg-gradient-to-r from-orange-50 to-amber-50  rounded-xl">
+                <button
+                  onClick={() => dispatch(addCartItem(item))}
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3
+                       bg-white/70 backdrop-blur-sm border border-white/50
+                       text-gray-800 font-medium rounded-lg
+                       hover:bg-white/90 hover:shadow-lg
+                       active:scale-98 transform transition-all duration-200
+                       focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                >
+                  <ShoppingCart className="w-4 h-4" />
+                  Add to Cart
+                </button>
+
+                <button
+                  className="flex items-center justify-center p-3
+                       bg-red-500/80 backdrop-blur-sm border border-red-400/50
+                       text-white font-medium rounded-lg
+                       hover:bg-red-600/90 hover:shadow-lg
+                       active:scale-95 transform transition-all duration-200
+                       focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                  onClick={() => dispatch(removeItem(item.id))}
+                >
+                  <Trash2 className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
           <div className="mt-1 hidden md:block font-bold text-[var(--blue)] md:text-center text-right   w-full  md:w-fit  ">
