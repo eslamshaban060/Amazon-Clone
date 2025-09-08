@@ -10,7 +10,7 @@ import {
   RegisterForm as RegisterFormType,
   MessageState,
 } from "../../../types/auth";
-import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
+import amazonLogo from "../../../../public/logo.png";
 import { useRouter } from "next/navigation";
 
 const RegisterForm: React.FC = () => {
@@ -139,7 +139,7 @@ const RegisterForm: React.FC = () => {
             type="submit"
             className="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 rounded"
           >
-            Verify mobile number
+            Register your Email  
           </button>
 
           {/* Success/Error message display */}

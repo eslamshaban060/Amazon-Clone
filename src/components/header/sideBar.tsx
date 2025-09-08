@@ -15,11 +15,40 @@ import {
   Gift,
   Zap,
 } from "lucide-react";
+import { useAppSelector } from "../../redux/hooks";
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+const SignInSection: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const user = useAppSelector((state) => state.auth.user);
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+
+  if (isAuthenticated && user) {
+    return (
+      <div
+        onClick={onClose}
+        className="w-full p-4 text-left flex items-center space-x-3 cursor-default"
+      >
+        <User className="w-5 h-5 text-[var(--gray-dark)]" />
+        <Link href="/account" className="text-[var(--black)] font-medium">{user.name}</Link>
+      </div>
+    );
+  } else {
+    return (
+      <Link
+        href="/login"
+        onClick={onClose}
+        className="w-full p-4 text-left hover:bg-[var(--bg-light)] transition-colors flex items-center space-x-3"
+      >
+        <User className="w-5 h-5 text-[var(--gray-dark)]" />
+        <span className="text-[var(--black)] font-medium">Sign in</span>
+      </Link>
+    );
+  }
+};
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
@@ -89,14 +118,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
         {/* Sign In */}
         <div className="border-b border-gray-200">
-          <Link
-            href="/login"
-            onClick={onClose}
-            className="w-full p-4 text-left hover:bg-[var(--bg-light)] transition-colors flex items-center space-x-3"
-          >
-            <User className="w-5 h-5 text-[var(--gray-dark)]" />
-            <span className="text-[var(--black)] font-medium">Sign in</span>
-          </Link>
+          <SignInSection onClose={onClose} />
         </div>
 
         {/* Browse Amazon Section */}

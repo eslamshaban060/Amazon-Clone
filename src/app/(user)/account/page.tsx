@@ -7,7 +7,7 @@ import { logout, updateProfile, clearMessage } from "@/redux/slices/authSlice";
 import { validateForm } from "@/utils/validation";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { User } from "../../../types/auth";
-import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
+import amazonLogo from "../../../../public/logo.png";
 const ProfilePage: React.FC = () => {
   // Get authentication state from Redux store
   const { user, isAuthenticated, message } = useAppSelector(
@@ -67,7 +67,7 @@ const ProfilePage: React.FC = () => {
   // If user is not authenticated, show login prompt
   if (!isAuthenticated) {
     return (
-      <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow space-y-4 text-center">
+      <div className="max-w-md mx-auto my-10 bg-white p-6 rounded-lg shadow space-y-4 text-center">
         {/* Amazon logo */}
         <div className="logo w-full">
           <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
@@ -98,7 +98,7 @@ const ProfilePage: React.FC = () => {
 
   // Main profile page layout (when user is authenticated)
   return (
-    <div className="profile bg-white mt-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
+    <div className="profile bg-white my-10 flex flex-col w-full items-center gap-8 p-4 mb-10">
       {/* Amazon logo */}
       <div className="logo w-full">
         <Image src={amazonLogo} alt="" className="w-40 mx-auto" />
