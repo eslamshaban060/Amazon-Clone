@@ -1,14 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User, AuthState, LoginForm, RegisterForm } from "../../types/auth";
 
-// Initialize the authentication state from localStorage if available
-// This allows users to stay logged in after page refresh
+// const initialState: AuthState = {
+//   user: JSON.parse(localStorage.getItem("authUser") || "null") as User | null,
+
+//   isAuthenticated: !!localStorage.getItem("authUser"),
+//   // No initial message
+//   message: undefined,
+// };
+
+const getUserFromStorage = (): User | null => {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("authUser");
+    if (stored) {
+      try {
+        return JSON.parse(stored) as User;
+      } catch (e) {
+        console.error("Invalid user JSON:", e);
+      }
+    }
+  }
+  return null;
+};
+
 const initialState: AuthState = {
-  // Try to restore user from localStorage, parse as User type or set to null
-  user: JSON.parse(localStorage.getItem("authUser") || "null") as User | null,
-  // Set authentication status based on whether user data exists in localStorage
-  isAuthenticated: !!localStorage.getItem("authUser"),
-  // No initial message
+  user: getUserFromStorage(),
+  isAuthenticated:
+    typeof window !== "undefined" && !!localStorage.getItem("authUser"),
   message: undefined,
 };
 
@@ -93,7 +111,7 @@ const authSlice = createSlice({
         const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
         const updatedUsers = users.map((u) =>
-          (u.name === state.user!.name || u.mobile === state.user!.mobile)
+          u.name === state.user!.name || u.mobile === state.user!.mobile
             ? state.user!
             : u
         );
@@ -108,8 +126,14 @@ const authSlice = createSlice({
   },
 });
 
-export const { register, login, logout, updateProfile, clearMessage, setMessage } =
-  authSlice.actions;
+export const {
+  register,
+  login,
+  logout,
+  updateProfile,
+  clearMessage,
+  setMessage,
+} = authSlice.actions;
 
 // Export the reducer to be used in the store configuration
 export default authSlice.reducer;

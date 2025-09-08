@@ -64,9 +64,7 @@ const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
   };
 
   const handleAddToList = () => {
-    const alreadyInList = itmlist.some(
-      (item: any) => item.id === productDetails.id
-    );
+    const alreadyInList = itmlist.some((item) => item.id === productDetails.id);
     if (alreadyInList) {
       showToast("⚠️ Item already in your List!", "error");
     } else {
