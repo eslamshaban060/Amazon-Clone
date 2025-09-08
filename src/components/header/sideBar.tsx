@@ -33,7 +33,7 @@ const SignInSection: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         className="w-full p-4 text-left flex items-center space-x-3 cursor-default"
       >
         <User className="w-5 h-5 text-[var(--gray-dark)]" />
-        <span className="text-[var(--black)] font-medium">{user.name}</span>
+        <Link href="/account" className="text-[var(--black)] font-medium">{user.name}</Link>
       </div>
     );
   } else {
