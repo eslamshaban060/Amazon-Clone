@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
   );
 
   return (
-    <div className="w-[100%] mx-auto p-2  font-sans">
+    <div className="w-[100%] mx-auto p-2  font-sans  md:p-5 bg-white">
       <div
         className="text-3xl font-normal pb-3 mb-5 border-b border-gray-200"
         style={{ color: "var(--black)" }}
