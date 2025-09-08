@@ -10,7 +10,7 @@ import {
   RegisterForm as RegisterFormType,
   MessageState,
 } from "../../../types/auth";
-import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
+import amazonLogo from "../../../../public/logo.png";
 import { useRouter } from "next/navigation";
 
 const RegisterForm: React.FC = () => {

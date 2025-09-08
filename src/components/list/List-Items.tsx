@@ -3,8 +3,9 @@ import React from "react";
 import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { removeItem } from "@/redux/slices/listSlice";
+import { addCartItem } from "@/redux/slices/cartSlice";
 import Link from "next/link";
-
+import Image from "next/image";
 const ListItems: React.FC = () => {
   const dispatch = useAppDispatch();
   const { list, searchQuery } = useAppSelector((state) => state.list);
@@ -35,10 +36,12 @@ const ListItems: React.FC = () => {
         >
           {/* Product Image */}
           <div
-            className="w-20 h-30 rounded flex items-center justify-center text-gray-600"
+            className="w-30 h-30 rounded flex items-center justify-center text-gray-600"
             style={{ backgroundColor: "var(--bg-light)" }}
           >
-            <img
+            <Image
+            width="208"
+            height="208"
               src={item.image}
               alt={item.title}
               className="rounded-lg object-cover w-52 px-1.5"
@@ -61,7 +64,7 @@ const ListItems: React.FC = () => {
             <div className="flex gap-2 mt-4">
               <button
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--yellow)] text-white hover:bg-[var(--orange)] transition flex-7"
-                onClick={() => alert(`${item.title} added to cart!`)}
+                onClick={() => dispatch(addCartItem(item))}
               >
                 <FaShoppingCart /> Add
               </button>

@@ -8,7 +8,7 @@ import { FaEye } from "react-icons/fa";
 import { login, clearMessage } from "@/redux/slices/authSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
 import { LoginForm as LoginFormType } from "../../../types/auth";
-import amazonLogo from "../../../../public/Amazon-Logo-White-PNG-Image.png";
+import amazonLogo from "../../../../public/logo.png";
 
 const LoginForm: React.FC = () => {
   // Local state for form data (email/mobile and password)
