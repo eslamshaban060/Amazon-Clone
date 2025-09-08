@@ -25,6 +25,7 @@ const Cart: React.FC = () => {
       <div className="all-lists gap-5 border-[var(--bg)] sm:p-5">
         <div className="items flex flex-col items-center gap-5 pt-4">
           <CartItems />
+
           <div className="text-right flex items-center justify-end">
             <p className="text-lg" style={{ color: "var(--black)" }}>
               Subtotal ({totalQuantity} items):{" "}

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useProducts } from "../../../components/product/hooks/useProducts";
 import Allproducts from "./Allproducts";
+import { useEffect } from "react";
 
 interface pricetype {
   min: number;
@@ -16,15 +17,8 @@ interface priceRang {
 const StorePage = () => {
   const { products, status, error, handleAddToCart } = useProducts();
 
-  // نحسب أقصى سعر موجود ونقسمه على 4 علشان نعمل الرينجات
   const maxPrice = Math.max(...products.map((item) => item.price), 0);
   const step = Math.ceil(maxPrice / 4);
-
-  const [filters, setFilters] = useState({
-    deliveryDay: "",
-    brands: "All",
-    priceRange: { min: 0, max: maxPrice || step * 4 },
-  });
 
   // Handle brand selection
   const handleBrandChange = (value: string) => {
@@ -42,7 +36,6 @@ const StorePage = () => {
     }));
   };
 
-  // رينجات الأسعار
   const priceRanges: priceRang[] = [
     { label: "All", valued: { min: 0, max: maxPrice } },
     { label: `0 $ to ${step} $`, valued: { min: 0, max: step } },
@@ -59,6 +52,22 @@ const StorePage = () => {
       valued: { min: 3 * step, max: 4 * step },
     },
   ];
+
+  const [filters, setFilters] = useState({
+    deliveryDay: "",
+    brands: "All",
+    priceRange: priceRanges[0].valued,
+  });
+
+  useEffect(() => {
+    if (products.length > 0) {
+      const newMaxPrice = Math.max(...products.map((item) => item.price), 0);
+      setFilters((prev) => ({
+        ...prev,
+        priceRange: { min: 0, max: newMaxPrice },
+      }));
+    }
+  }, [products]);
 
   // Brands
   const brands = Array.from(
@@ -86,7 +95,6 @@ const StorePage = () => {
     );
   }
 
-  // الفلترة
   const filteredArray =
     filters.brands === "All"
       ? products.filter(
@@ -96,7 +104,7 @@ const StorePage = () => {
         )
       : products
           .filter((item) => item.category === filters.brands)
-          .filter(
+          ?.filter(
             (item) =>
               filters.priceRange.min <= item.price &&
               item.price <= filters.priceRange.max
@@ -182,7 +190,10 @@ const StorePage = () => {
                     type="radio"
                     name="price"
                     value={range.label}
-                    checked={filters.priceRange.max === range.valued.max}
+                    checked={
+                      filters.priceRange.min === range.valued.min &&
+                      filters.priceRange.max === range.valued.max
+                    }
                     onChange={() => handlePriceRangeChange(range.valued)}
                     className="radio-input mr-[8px] cursor-pointer"
                   />
