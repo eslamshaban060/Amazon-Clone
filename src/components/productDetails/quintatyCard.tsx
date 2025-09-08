@@ -8,8 +8,13 @@ import { addCartItem } from "@/redux/slices/cartSlice";
 interface ProductType {
   productDetails: Product;
 }
-
-const Toast = ({ message, isVisible, onClose, type }) => {
+interface ToastProps {
+  message: string;
+  isVisible: boolean;
+  onClose: () => void;
+  type: string;
+}
+const Toast: React.FC<ToastProps> = ({ message, isVisible, onClose, type }) => {
   React.useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
@@ -43,7 +48,7 @@ const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
     type: "success",
   });
 
-  const showToast = (message, type = "success") => {
+  const showToast = (message: string, type: string = "success") => {
     setToast({ isVisible: true, message, type });
   };
 
