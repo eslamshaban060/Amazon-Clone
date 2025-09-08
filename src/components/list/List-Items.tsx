@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
+import { ShoppingCart, Trash2, Plus } from "lucide-react";
+
+import { FaList } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { removeItem } from "@/redux/slices/listSlice";
 import { addCartItem } from "@/redux/slices/cartSlice";
@@ -64,7 +66,7 @@ const ListItems: React.FC = () => {
             <div className="flex gap-2 mt-4">
               <button
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--yellow)] text-white hover:bg-[var(--orange)] transition flex-7"
-                onClick={() => dispatch(addCartItem(item))}
+                onClick={() => alert(`${item.title} added to cart!`)}
               >
                 <FaShoppingCart /> Add
               </button>

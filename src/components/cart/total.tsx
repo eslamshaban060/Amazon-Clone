@@ -32,29 +32,7 @@ const CheckoutSummary = () => {
       <div className="w-[100%] mx-auto ">
         <div className="p-4 bg-white rounded ">
           {/* Free Shipping Notice */}
-          <div className="flex items-start gap-2 mb-4">
-            <div
-              className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
-              style={{ backgroundColor: "var(--green)" }}
-            >
-              <Check size={12} color="white" />
-            </div>
 
-            <div className="text-sm">
-              <p className="font-bold mb-1" style={{ color: "var(--green)" }}>
-                Your order qualifies for FREE Shipping
-              </p>
-              <p style={{ color: "var(--black)" }}>
-                Choose this option at checkout.
-                <span
-                  className="underline cursor-pointer ml-1"
-                  style={{ color: "var(--blue-link)" }}
-                >
-                  See details
-                </span>
-              </p>
-            </div>
-          </div>
           {freeShipping && (
             <div className="flex items-start gap-2 mb-4">
               <div
