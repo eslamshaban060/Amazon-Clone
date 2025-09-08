@@ -29,7 +29,7 @@ const RightSection = () => {
         <div className="text-xs mt-[-1px]">
           {isAuthenticated && user ? `Hello, ${user.name}` : "Hello, sign in"}
         </div>
-        <div className="text-sm font-semibold">Account & Lists</div>
+        <div className="text-sm font-semibold">Profile</div>
       </Link>
 
       {/* Your List - only show if authenticated */}
