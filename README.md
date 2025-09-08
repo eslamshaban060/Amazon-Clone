@@ -35,7 +35,11 @@ This project was developed by **Group 4** during the training, with each member 
 
 - **Ahmed Reda Salama – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-reda-salama-962864292/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Ahmed-RS-22) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:ahmed.rs.1532@gmail.com)
 
-  - Developed and styled the website footer
+  - Developed and styled the website  footer & auth footer for auth forms Ui.
+  - Developed and styled a full Authentication module  (login , register , profile settings).
+  - developed an form vaildation file component for multiple usage .
+  - developed an styled a shopping list (like favourite list) that allows user to return to specific items later .
+  - used Redux toolkit for state managment all over features .
 
 - **Boula Ayman – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boula-ayman-3a86581b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Boula-Ayman) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:boulaaymanzaher@gmail.com)
 
