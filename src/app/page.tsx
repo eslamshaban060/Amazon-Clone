@@ -8,7 +8,7 @@ import SecoundHoeCards from "@/components/homeCards/secoundHomeCards/secoundHoeC
 const page = () => {
   return (
     <div>
-      <main className="">
+      <main className=" bg-[var(--bg)]">
         <MainSlider />
       </main>
       {/* top  cards section  */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { ApiData } from "@/Data/ApiData/productDetails";
+import CustomerReviews from "@/components/productDetails/productRevews";
 
 interface ProductDetailsProps {
   params: {
@@ -16,10 +17,12 @@ const ProductDetails = (Props: ProductDetailsProps) => {
         <div>
           <ApiData id={parseInt(Props.params.id)} />
         </div>
-      </section>
+        <div className=" w-[100%] my-3 opacity-25 h-[1px] bg-[var(--gray-light)]"></div>
 
-      {/* commints section and reviews  */}
-      <section></section>
+        <div className="pt-3">
+          <CustomerReviews />
+        </div>
+      </section>
     </div>
   );
 };

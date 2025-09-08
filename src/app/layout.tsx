@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={notoSerifGujarati.className} suppressHydrationWarning>
         <Providers>
-          <div className="bg-[var(--bg)]" suppressHydrationWarning>
+          <div suppressHydrationWarning>
             <header suppressHydrationWarning>
               <Header />
             </header>

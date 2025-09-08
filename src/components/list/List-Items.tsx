@@ -1,15 +1,16 @@
-// src/components/ListItems.tsx
+"use client";
 import React from "react";
-import { useList } from "./context/ListContext"; // Import hook
-import ListItem from "./context/ListContext"; // Import type
 import { FaTrash, FaShoppingCart, FaList } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { removeItem } from "@/redux/slices/listSlice";
+import Link from "next/link";
 
 const ListItems: React.FC = () => {
-  // Grab needed values from context
-  const { list, searchQuery, removeItem } = useList();
+  const dispatch = useAppDispatch();
+  const { list, searchQuery } = useAppSelector((state) => state.list);
 
   // Filter items based on search query
-  const filteredItems = list.filter((item: ListItem) =>
+  const filteredItems = list.filter((item) =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -17,52 +18,63 @@ const ListItems: React.FC = () => {
     return (
       <p className="text-gray-500 italic text-center">
         <FaList className="inline-block mb-1 mr-2" />
-        There are no items matching your search.
+        There are no items in your list
+        <Link className=" font-bold text-[var(--blue-link)]" href="store">
+          store
+        </Link>
       </p>
     );
   }
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full p-2">
+    <div className="flex flex-col gap-4 w-full ">
       {filteredItems.map((item) => (
         <div
           key={item.id}
-          className="flex flex-col  rounded-xl overflow-hidden  bg-white hover:shadow-lg transition"
+          className="flex py-5 border-b border-gray-200 p-3 gap-5"
         >
           {/* Product Image */}
-          <div className="h-44 bg-gray-50 flex items-center justify-center">
+          <div
+            className="w-20 h-30 rounded flex items-center justify-center text-gray-600"
+            style={{ backgroundColor: "var(--bg-light)" }}
+          >
             <img
-              src={typeof item.image === "string" ? item.image : item.image.src}
+              src={item.image}
               alt={item.title}
-              className="h-full w-full object-contain p-3"
+              className="rounded-lg object-cover w-52 px-1.5"
             />
           </div>
 
           {/* Product Details */}
-          <div className="p-4 flex flex-col flex-1">
-            <h3 className="font-semibold text-lg text-gray-800 line-clamp-1">
+          <div className=" flex-1 ">
+            <h3
+              className=" mb-2 font-normal leading-tight cursor-pointer text-xl hover:underline"
+              style={{ color: "var(--blue-link)" }}
+            >
               {item.title}
             </h3>
-            <span className="mt-1 font-bold text-[var(--blue)]">
+            <p className=" text-[var(--bg)]">{item.description}</p>
+            <div className="mt-1 block md:hidden font-bold text-[var(--blue)] md:text-center text-right   w-full  md:w-fit  ">
               {item.price} EGP
-            </span>
-            <span className="text-sm text-gray-500">{item.shipping}</span>
-
+            </div>
             {/* Actions */}
             <div className="flex gap-2 mt-4">
               <button
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--yellow)] text-white hover:bg-[var(--orange)] transition flex-1"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--yellow)] text-white hover:bg-[var(--orange)] transition flex-7"
                 onClick={() => alert(`${item.title} added to cart!`)}
               >
                 <FaShoppingCart /> Add
               </button>
               <button
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--red)] text-white hover:bg-red-600 transition"
-                onClick={() => removeItem(item.id)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg flex-2 bg-[var(--red)] text-white hover:bg-red-600 transition"
+                onClick={() => dispatch(removeItem(item.id))}
               >
                 <FaTrash /> Delete
               </button>
             </div>
+          </div>
+          <div className="mt-1 hidden md:block font-bold text-[var(--blue)] md:text-center text-right   w-full  md:w-fit  ">
+            {item.price} EGP
           </div>
         </div>
       ))}

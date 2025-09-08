@@ -114,12 +114,7 @@ const ProducData: React.FC<ProductType> = ({ productDetails }) => {
           </div>
         </div>
       ) : (
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
-          tenetur illo quibusdam obcaecati. Beatae provident tempore voluptas
-          odit. Nostrum consequuntur error reiciendis dolor maxime, cum placeat
-          distinctio accusamus ea quae!
-        </div>
+        <div>not found page</div>
       )}
     </div>
   );
