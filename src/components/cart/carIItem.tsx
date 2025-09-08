@@ -49,7 +49,7 @@ const CartItems: React.FC = () => {
           {/* Item Details */}
           <div className="flex-1">
             {/* Product Name */}
-            <div className="text-base mb-2 font-normal leading-tight cursor-pointer hover:underline">
+            <div className="text-base mb-2 font-normal leading-tight cursor-pointer">
               <span style={{ color: "var(--blue-link)" }} className="block">
                 {item.title}
               </span>
