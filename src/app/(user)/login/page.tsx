@@ -121,7 +121,7 @@ const LoginForm: React.FC = () => {
             type="submit"
             className="w-full bg-[var(--yellow)] hover:bg-yellow-400 text-black py-2 rounded text-[20px]"
           >
-            Continue
+            sign in 
           </button>
 
           {/* Success/Error message display */}
