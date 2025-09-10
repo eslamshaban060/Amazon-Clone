@@ -42,7 +42,16 @@ This project was developed by **Group 4** during the training, with each member 
   - used Redux toolkit for state managment all over features .
 
 - **Boula Ayman – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boula-ayman-3a86581b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/Boula-Ayman) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:boulaaymanzaher@gmail.com)
+- 
+- Set up Redux Toolkit for state management, including project-wide store configuration and creation of reusable slices.
 
+- Integrated external APIs to fetch and display products across the application.
+
+- Developed the Product Page, ensuring dynamic data rendering by linking it with the API.
+
+- Built the main product slider using Swiper.js and connected additional sliders to the API for real-time product showcasing.
+
+- Implemented user authentication integration, ensuring that the signed-in user’s name is dynamically displayed in their profile.
   -
 
 - **Keroles Ehab – Member** [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/keroles-ehab-62b83a186/) [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github&logoColor=white)](https://github.com/KerolesEhab97) [![Gmail](https://img.shields.io/badge/Email-red?logo=gmail&logoColor=white)](mailto:kerolesehab85@gmail.com)
