@@ -1,5 +1,5 @@
 import React from "react";
-import { ApiData } from "@/Data/ApiData/productDetails";
+import { ApiData } from "@/Data/ApiData/product";
 import CustomerReviews from "@/components/productDetails/productRevews";
 
 interface ProductDetailsProps {
@@ -11,6 +11,8 @@ interface ProductDetailsProps {
 const ProductDetails = (Props: ProductDetailsProps) => {
   console.log(Props.params.id);
   return (
+    <>
+    
     <div className=" bg-white">
       {/* top section  */}
       <section className=" p-5">
@@ -24,6 +26,7 @@ const ProductDetails = (Props: ProductDetailsProps) => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

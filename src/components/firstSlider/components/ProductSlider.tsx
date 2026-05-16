@@ -59,7 +59,7 @@ export const ProductSlider: React.FC<ProductSliderProps> = ({
         Best Sellers in Clothing & Accessories
       </h2>
       <Swiper
-        className="px-4 h-[220px]   producSlider  bg-white w-[100%] md:px-6 lg:px-8"
+  className="px-4 h-[220px]   productSlider  bg-white  w-[100%] md:px-6 lg:px-8"
         modules={[Navigation, Pagination, Scrollbar]}
         spaceBetween={0}
         navigation

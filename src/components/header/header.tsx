@@ -1,9 +1,8 @@
 import React from "react";
 import HeaderLink from "./headerLink";
-import HumborgerMenue from "./humborgerMenue";
+import HumborgerMenu from "./HumborgerMenu";
 import Logo from "./logo";
-import Serchbar from "./headerSearch/serchbar";
-
+import Serchbar from "./headerSearch/SearchBar";
 import RightSection from "./RightSection";
 
 const Header = () => {
@@ -36,7 +35,7 @@ const Header = () => {
         <div className="w-full max-w-8xl mx-auto flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
           {/* Hamburger Menu */}
           <div className=" hidden sm:flex">
-            <HumborgerMenue />
+            <HumborgerMenu />
           </div>
           {/* Navigation Links Swiper */}
           <div className="flex-1 w-full overflow-hidden relative">

@@ -1,11 +1,11 @@
 import React from "react";
-import Product from "@/Data/ApiData/productDetails";
+import { Product } from "@/Data/ApiData/product";
 import QuintatyCard from "./quintatyCard";
 
 interface ProductType {
   productDetails: Product;
 }
-const ProducData: React.FC<ProductType> = ({ productDetails }) => {
+const producData: React.FC<ProductType> = ({ productDetails }) => {
   const cond = productDetails.title?.length;
   return (
     <div>
@@ -120,4 +120,4 @@ const ProducData: React.FC<ProductType> = ({ productDetails }) => {
   );
 };
 
-export default ProducData;
+export default producData;

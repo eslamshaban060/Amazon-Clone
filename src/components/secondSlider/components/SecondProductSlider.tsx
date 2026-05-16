@@ -58,7 +58,7 @@ const SecondProductSlider: React.FC<SecondProductSliderProps> = ({
         Min. 50% off | Unique kitchen finds | Amazon Brands & more
       </h2>
       <Swiper
-        className="px-4  h-[220px]  producSlider  bg-white  w-[100%] md:px-6 lg:px-8"
+        className="px-4  h-[220px]  productSlider  bg-white  w-[100%] md:px-6 lg:px-8"
         modules={[Navigation, Pagination, Scrollbar]}
         spaceBetween={0}
         navigation

@@ -2,13 +2,14 @@
 import React, { useState, useEffect } from "react";
 import ProducData from "@/components/productDetails/producData";
 
-export default interface Product {
+export interface Product {
   id: number;
   title: string;
   price: number;
   image: string;
   category: string;
   description: string;
+  rating: { rate: number; count: number };
 }
 interface ProductID {
   id: number;

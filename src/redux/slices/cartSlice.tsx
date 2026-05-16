@@ -1,9 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import Product from "@/Data/ApiData/productDetails";
+import type { Product } from "@/Data/ApiData/product";
 
 // ✅ Cart Item type (Product + quantity)
-interface CartItem extends Product {
+export interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: { rate: number; count: number };
   quantity: number;
 }
 
@@ -44,7 +51,7 @@ const listSlice = createSlice({
   initialState,
   reducers: {
     // ✅ Add item (or increase quantity if exists)
-    addCartItem: (state, action: PayloadAction<Product>) => {
+    addCartItem: (state, action: PayloadAction<CartItem>) => {
       const existingItem = state.list.find(
         (item) => item.id === action.payload.id
       );

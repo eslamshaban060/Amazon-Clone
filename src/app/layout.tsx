@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_Gujarati } from "next/font/google";
 import "./globals.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/bundle";
 import { Providers } from "@/components/Providers";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";

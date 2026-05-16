@@ -1,22 +1,23 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-const Card2 = () => {
+const Card3 = () => {
   return (
-    <div className="w-[100%]  p-2 xl:p-3 h-auto flex flex-col gap-3 bg-[var(--white)]">
+    <div className="w-[100%] p-2 xl:p-3 h-auto flex flex-col gap-3 bg-[var(--white)]">
       <div>
         <h3 className=" text-[13px] sm:text-[19px] md:text-[14px] lg:text-[18px] xl:text-2xl font-bold ">
-          Customers' Most-Loved
+          the Best Sellers in the
         </h3>
         <h3 className=" text-[13px] sm:text-[19px] md:text-[14px]  lg:text-[18px] xl:text-2xl  font-bold ">
-          Products
+          Beauty
         </h3>
       </div>
-      <Link href="/store" className=" h-[90%] mx-auto w-[80%]">
-        <img src="/homecards2/Frame 62.png" alt="" />
+      <Link href="/store" className=" h-[90%] mx-auto w-[76%]">
+        <Image src="/homecards2/Frame 61.png" alt="" width={200} height={200} />
       </Link>
     </div>
   );
 };
 
-export default Card2;
+export default Card3;

@@ -50,8 +50,8 @@ html::-webkit-scrollbar-thumb {
 .swiper-button-prev:after {
   transform: translateY(-50px);
 }
-.producSlider .swiper-button-next:after,
-.producSlider .swiper-button-prev:after {
+.productSlider .swiper-button-next:after,
+.productSlider .swiper-button-prev:after {
   transform: translateY(0px);
   background-color: var(--white);
   padding: 10px;

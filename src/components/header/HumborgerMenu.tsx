@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 import Sidebar from "./sideBar";
 import { useState } from "react";
 
-const HumborgerMenue = () => {
+const HumborgerMenu = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -24,4 +24,4 @@ const HumborgerMenue = () => {
   );
 };
 
-export default HumborgerMenue;
+export default HumborgerMenu;

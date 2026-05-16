@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 
-export default function Slider() {
+export default function MainSlider() {
   return (
     <div
       className="w-full "
@@ -19,7 +19,7 @@ export default function Slider() {
         pagination={{ clickable: false }}
         loop={true}
         autoplay={{ delay: 3000 }}
-        className="producSlider"
+        className="productSlider"
       >
         <SwiperSlide>
           <div className="relative h-[300px] md:h-[450px] lg:h-[550px] w-full">

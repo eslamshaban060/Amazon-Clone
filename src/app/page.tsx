@@ -1,9 +1,9 @@
 import React from "react";
-import MainSlider from "../components/Caruosel/MainSlider";
+import MainSlider from "../components/Carousel/MainSlider";
 import FirstSlider from "../components/firstSlider/page";
 import SecondSlider from "../components/secondSlider/page";
 import CardsRow from "@/components/homeCards/row";
-import SecoundHoeCards from "@/components/homeCards/secoundHomeCards/secoundHoeCards";
+import SecondHomeCards from "@/components/homeCards/secondHomeCards/SecondHomeCards";
 
 const page = () => {
   return (
@@ -21,7 +21,7 @@ const page = () => {
       </section>
 
       <section>
-        <SecoundHoeCards />
+        <SecondHomeCards />
       </section>
 
       <section className="xl:px-[30px] xl:pb-[33px]  xl:pt-0 lg:p-[23px] md:p-[8px] mb- p-2  ">

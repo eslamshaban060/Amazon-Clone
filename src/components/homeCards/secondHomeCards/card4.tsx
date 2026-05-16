@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Category {
   id: number;
@@ -31,7 +31,7 @@ const Card4 = () => {
         </h3>
       </div>
       <Link href="/store" className=" h-[90%] mx-auto w-[82%]">
-        <img src="/homecards2/Frame 63.png" alt="" />
+        <Image src="/homecards2/Frame 63.png" alt="" width={200} height={200} />
       </Link>
     </div>
   );

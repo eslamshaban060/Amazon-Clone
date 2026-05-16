@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { ChevronDown, MapPin, Check } from "lucide-react";
-import Product from "@/Data/ApiData/productDetails";
+import { Product } from "@/Data/ApiData/product";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { addItem } from "@/redux/slices/listSlice";
 import { addCartItem } from "@/redux/slices/cartSlice";
+import type { CartItem } from "@/redux/slices/cartSlice";
 
 interface ProductType {
   productDetails: Product;
@@ -58,13 +59,13 @@ const QuintatyCard: React.FC<ProductType> = ({ productDetails }) => {
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
-      dispatch(addCartItem(productDetails));
+      dispatch(addCartItem({ ...productDetails, quantity: 1 } as CartItem));
     }
     showToast("Added to Cart!", "success");
   };
 
   const handleBuyNow = () => {
-    dispatch(addCartItem(productDetails));
+    dispatch(addCartItem({ ...productDetails, quantity: 1 } as CartItem));
     showToast("Proceeding to checkout...", "success");
   };
 

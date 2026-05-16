@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import HumborgerMenue from "./humborgerMenue";
-import { FaRegUser } from "react-icons/fa6";
+import { FaMapMarker } from "react-icons/fa";
+import HumborgerMenu from "./HumborgerMenu";
+import { FaUser } from "react-icons/fa";
 
 import Cart from "./cart";
 
@@ -14,7 +14,7 @@ const Logo = () => {
         <div className="flex items-center w-full justify-between">
           <div className=" flex mt-2 gap-1">
             <div className=" flex sm:hidden">
-              <HumborgerMenue />
+              <HumborgerMenu />
             </div>
 
             {/* Amazon Logo */}
@@ -32,7 +32,7 @@ const Logo = () => {
           </div>
         </div>
         <Link href="/login" className=" lg:hidden flex gap-1 px-2 text-2xl">
-          <FaRegUser />
+          <FaUser />
         </Link>
         {/* Cart - Show on mobile beside logo */}
         <div className="lg:hidden flex  space-x-1 cursor-pointer hover:underline">
@@ -42,7 +42,7 @@ const Logo = () => {
 
         {/* Location - Hidden on mobile */}
         <div className="hidden lg:flex items-center space-x-2 text-sm">
-          <FaMapMarkerAlt
+              <FaMapMarker
             className="text-white text-lg"
             suppressHydrationWarning
           />

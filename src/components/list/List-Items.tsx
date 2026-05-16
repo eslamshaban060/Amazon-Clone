@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
 import { ShoppingCart, Trash2, Plus } from "lucide-react";
+import Image from "next/image";
 
 import { FaList } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { removeItem } from "@/redux/slices/listSlice";
 import { addCartItem } from "@/redux/slices/cartSlice";
+import type { CartItem } from "@/redux/slices/cartSlice";
 import Link from "next/link";
 
 const ListItems: React.FC = () => {
@@ -38,13 +40,15 @@ const ListItems: React.FC = () => {
         >
           {/* Product Image */}
           <div
-            className="w-20 h-30 rounded flex items-center justify-center text-gray-600"
+            className="w-20 h-30 rounded flex items-center justify-center text-gray-600 relative"
             style={{ backgroundColor: "var(--bg-light)" }}
           >
-            <img
+            <Image
               src={item.image}
               alt={item.title}
-              className="rounded-lg object-cover w-52 px-1.5"
+              fill
+              className="object-cover rounded-lg"
+              sizes="208px"
             />
           </div>
 
@@ -60,12 +64,12 @@ const ListItems: React.FC = () => {
             <div className="mt-1 block md:hidden font-bold text-[var(--blue)] md:text-center text-right   w-full  md:w-fit  ">
               {item.price} EGP
             </div>
-            {/* Actions */}
-
-            <div className="mt-8 pt-6 ">
-              <div className="flex gap-3 p-4 bg-gradient-to-r from-orange-50 to-amber-50  rounded-xl">
-                <button
-                  onClick={() => dispatch(addCartItem(item))}
+           {/* Actions */}
+            
+              <div className="mt-8 pt-6 ">
+                <div className="flex gap-3 p-4 bg-gradient-to-r from-orange-50 to-amber-50  rounded-xl">
+                  <button
+                    onClick={() => dispatch(addCartItem({ ...item, quantity: 1 } as CartItem))}
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-3
                        bg-white/70 backdrop-blur-sm border border-white/50
                        text-gray-800 font-medium rounded-lg
